@@ -1,13 +1,12 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: yiyi
   Date: 2021/10/24
-  Time: 14:41
+  Time: 23:50
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <html class="no-js" lang="">
 <head>
     <meta charset="utf-8">
@@ -79,9 +78,6 @@
                             </div>
                             <div class="header-action d-none d-md-block">
                                 <ul>
-                                    <!--                                    <li class="header-search"><a href="#" data-toggle="modal"-->
-                                    <!--                                                                 data-target="#search-modal">-->
-                                    <!--                                        <i class="fas fa-search"></i></a></li>-->
                                     <s:if test="#session.User==null">
                                         <li class="header-btn"><a href="login.jsp" class="btn">登录</a></li>
                                         <li class="header-btn"><a href="register.jsp" class="btn">注册</a></li>
@@ -156,11 +152,11 @@
                 <div class="col-sm-6 align-self-center">
                     <div class="section-title text-center text-lg-left">
                         <h5 class="sub-title">目唯--你量身定做的电影推荐系统</h5>
-                        <h1 class="title">登录</h1>
+                        <h1 class="title">注册</h1>
                     </div>
                     <div class="sign-in-from">
-                        <h3 class="text-lg-left ">请输入你的账号和密码</h3>
-                        <form class="mt-4" method="post" action="login.action">
+                        <h3 class="text-lg-left ">请输入你注册的账号和密码</h3>
+                        <form class="mt-4" method="post" action="register.action">
                             <div class="form-group ">
                                 <h4 class="text-white">账号</h4>
                                 <input type="text" name="loginUser.username" class="form-control mb-0 bg-dark "
@@ -171,17 +167,13 @@
                                 <input type="password" name="loginUser.password" class="form-control mb-0 bg-dark"
                                        placeholder="密码">
                             </div>
-                            <div class="d-inline-block w-100">
-                                <button type="submit" class="btn btn-primary float-right ">登录</button>
+                            <div class="form-group text-warning">
+                                <h4 class="text-white">确认密码</h4><s:actionerror/>
+                                <input type="password" name="loginUser.repassword" class="form-control mb-0 bg-dark"
+                                       placeholder="确认密码">
                             </div>
-                            <div class="sign-info">
-                                <h4 class="dark-color d-inline-block line-height-2 text-primary">是否没有账号？ <a
-                                        href="sign-up.html" class="text-warning">注册</a></h4>
-                                <ul class="iq-social-media">
-                                    <li><a href="#"><i class="ri-facebook-box-line"></i></a></li>
-                                    <li><a href="#"><i class="ri-twitter-line"></i></a></li>
-                                    <li><a href="#"><i class="ri-instagram-line"></i></a></li>
-                                </ul>
+                            <div class="d-inline-block w-100">
+                                <button type="submit" class="btn btn-primary float-right ">注册</button>
                             </div>
                         </form>
                     </div>

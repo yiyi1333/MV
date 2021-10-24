@@ -82,8 +82,10 @@
                                     <!--                                    <li class="header-search"><a href="#" data-toggle="modal"-->
                                     <!--                                                                 data-target="#search-modal">-->
                                     <!--                                        <i class="fas fa-search"></i></a></li>-->
-                                    <li class="header-btn"><a href="#" class="btn">登录</a></li>
-                                    <li class="header-btn"><a href="#" class="btn">注册</a></li>
+                                    <s:if test="#session.User==null">
+                                        <li class="header-btn"><a href="login.jsp" class="btn">登录</a></li>
+                                        <li class="header-btn"><a href="register.jsp" class="btn">注册</a></li>
+                                    </s:if>
                                 </ul>
                             </div>
                         </nav>
@@ -161,7 +163,7 @@
                         <form class="mt-4" method="post" action="login.action">
                             <div class="form-group ">
                                 <h4 class="text-white">账号</h4>
-                                <input type="text" name="loginUser.id" class="form-control mb-0 bg-dark "
+                                <input type="text" name="loginUser.username" class="form-control mb-0 bg-dark "
                                        placeholder="账号">
                             </div>
                             <div class="form-group text-warning">

@@ -4,7 +4,7 @@ public class User {
     private int id;
     private String username;
     private String password;
-
+    private String repassword;
     public User() {
     }
 
@@ -12,6 +12,14 @@ public class User {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.repassword = password;
+    }
+
+    public User(int id, String username, String password, String repassword) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.repassword = repassword;
     }
 
     public int getId() {
@@ -36,5 +44,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRepassword() {
+        return repassword;
+    }
+
+    public void setRepassword(String repassword) {
+        this.repassword = repassword;
     }
 }

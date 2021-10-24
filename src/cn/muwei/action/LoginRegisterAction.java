@@ -47,4 +47,28 @@ public class LoginRegisterAction extends ActionSupport implements ServletContext
             return "fail";
         }
     }
+    public String register(){
+        LoginRegisterService service = new LoginRegisterService();
+        if(!loginUser.getPassword().equals(loginUser.getRepassword())){
+            this.addActionError("两次输入密码不同");
+            return "fail";
+        }
+        if(service.register(loginUser)){
+            return "success";
+        }
+        else{
+            return "fail";
+        }
+    }
+
+//    public void validate(){
+//        String account = loginUser.getUsername();
+//        String pwd = loginUser.getPassword();
+//        if(account == null || account.equals("")){
+//            this.addFieldError("loginUser.username", "请输入用户名");
+//        }
+//        if(pwd == null || pwd.equals("")){
+//            this.addFieldError("loginUser.password", "请输入密码");
+//        }
+//    }
 }

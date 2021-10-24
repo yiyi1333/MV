@@ -83,7 +83,7 @@
                   <!--                                        <i class="fas fa-search"></i></a></li>-->
                   <s:if test="#session.User==null">
                     <li class="header-btn"><a href="login.jsp" class="btn">登录</a></li>
-                    <li class="header-btn"><a href="#" class="btn">注册</a></li>
+                    <li class="header-btn"><a href="register.jsp" class="btn">注册</a></li>
                   </s:if>
                 </ul>
               </div>
