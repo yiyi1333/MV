@@ -12,5 +12,9 @@
             <result name="success">/index.jsp</result>
             <result name="fail">/login.jsp</result>
         </action>
+        <action name="register" class="cn.muwei.action.LoginRegisterAction" method="register">
+            <result name="success">/login.jsp</result>
+            <result name="fail">/register.jsp</result>
+        </action>
     </package>
 </struts>

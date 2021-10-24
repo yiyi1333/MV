@@ -31,13 +31,13 @@ public class UserDAO extends BaseDAO{
             throwables.printStackTrace();
         }
     }
-    public User findByid(int id){
+    public User findByid(String name){
         String sql = "select * from usrid\n" +
-                "where user_num = ?";
+                "where user_name = ?";
         User user = null;
         try {
             PreparedStatement pstat = conn.prepareStatement(sql);
-            pstat.setInt(1, id);
+            pstat.setString(1, name);
             ResultSet rst = pstat.executeQuery();
             if(rst.next()){
                 user = new User(rst.getInt(1), rst.getString(2), rst.getString(3));
@@ -46,6 +46,26 @@ public class UserDAO extends BaseDAO{
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public boolean insertUser(User user){
+        String sql = "insert into usrid\n" +
+                "set usrid.user_name = ?,\n" +
+                "    usrid.password = ?";
+        boolean flag = false;
+        try{
+            PreparedStatement pstat = conn.prepareStatement(sql);
+            pstat.setString(1, user.getUsername());
+            pstat.setString(2, user.getPassword());
+            int line = pstat.executeUpdate();
+            if(line != 0){
+                flag = true;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            return flag;
         }
     }
 }
