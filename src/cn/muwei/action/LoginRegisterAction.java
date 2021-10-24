@@ -36,7 +36,6 @@ public class LoginRegisterAction extends ActionSupport implements ServletContext
         this.response = response;
     }
 
-
     public String login(){
         LoginRegisterService service = new LoginRegisterService();
         if(service.login(loginUser)){
