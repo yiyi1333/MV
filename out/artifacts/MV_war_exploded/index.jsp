@@ -9,30 +9,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!doctype html>
 <html class="no-js" lang="">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>目唯 - Online Movies & TV Shows Template</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="referrer" content="no-referrer">
-  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <!-- CSS here -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/animate.min.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
-  <link rel="stylesheet" href="css/fontawesome-all.min.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/flaticon.css">
-  <link rel="stylesheet" href="css/odometer.css">
-  <link rel="stylesheet" href="css/aos.css">
-  <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/default.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
-</head>
+<jsp:include page="public/header.jsp"/>
 <body>
 
 <!-- preloader -->
@@ -51,96 +28,7 @@
 </button>
 <!-- Scroll-top-end-->
 
-<!-- header-area -->
-<header class="header-style-two">
-  <div id="sticky-header" class="menu-area">
-    <div class="container custom-container">
-      <div class="row">
-        <div class="col-8">
-          <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
-          <div class="menu-wrap">
-            <nav class="menu-nav show">
-              <div class="logo">
-                <a href="index.html">
-                  <img src="img/logo/logo.png" alt="Logo">
-                </a>
-              </div>
-              <div class="navbar-wrap main-menu d-none d-lg-flex">
-                <ul class="navigation">
-                  <li class="active menu-item-has-children"><a href="#">主页</a>
-                  </li>
-                  <li class="menu-item-has-children"><a href="#">全部电影</a>
-                  </li>
-                  <li><a href="tv-show.html">电影推荐</a></li>
-                  <li><a href="pricing.html">个人观影统计</a></li>
-                  <li><a href="pricing.html">个人信息</a></li>
-                </ul>
-              </div>
-              <div class="header-action d-none d-md-block justify-content-end">
-                <ul>
-                  <!--                                    <li class="header-search"><a href="#" data-toggle="modal"-->
-                  <!--                                                                 data-target="#search-modal">-->
-                  <!--                                        <i class="fas fa-search"></i></a></li>-->
-                  <s:if test="#session.User==null">
-                    <li class="header-btn"><a href="login.jsp" class="btn">登录</a></li>
-                    <li class="header-btn"><a href="register.jsp" class="btn">注册</a></li>
-                  </s:if>
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <!-- Mobile Menu  -->
-          <div class="mobile-menu">
-            <div class="close-btn"><i class="fas fa-times"></i></div>
-
-            <nav class="menu-box">
-              <div class="nav-logo"><a href="index.html"><img src="img/logo/logo.png" alt="" title=""></a>
-              </div>
-              <div class="menu-outer">
-                <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-
-                <ul class="navigation">
-                  <li class="active menu-item-has-children"><a href="#">Home</a>
-                    <ul class="submenu">
-                      <li><a href="index.html">Home One</a></li>
-                      <li class="active"><a href="index-2.html">Home Two</a></li>
-                    </ul>
-                    <div class="dropdown-btn"><span class="fas fa-angle-down"></span></div></li>
-                  <li class="menu-item-has-children"><a href="#">Movie</a>
-                    <ul class="submenu">
-                      <li><a href="movie.html">Movie</a></li>
-                      <li><a href="movie-details.html">Movie Details</a></li>
-                    </ul>
-                    <div class="dropdown-btn"><span class="fas fa-angle-down"></span></div></li>
-                  <li><a href="tv-show.html">tv show</a></li>
-                  <li><a href="pricing.html">Pricing</a></li>
-                  <li class="menu-item-has-children"><a href="#">blog</a>
-                    <ul class="submenu">
-                      <li><a href="blog.html">Our Blog</a></li>
-                      <li><a href="blog-details.html">Blog Details</a></li>
-                    </ul>
-                    <div class="dropdown-btn"><span class="fas fa-angle-down"></span></div></li>
-                  <li><a href="contact.html">contacts</a></li>
-                </ul>
-              </div>
-              <div class="social-links">
-                <ul class="clearfix">
-                  <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                  <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
-                  <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
-                  <li><a href="#"><span class="fab fa-instagram"></span></a></li>
-                  <li><a href="#"><span class="fab fa-youtube"></span></a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <div class="menu-backdrop"></div>
-          <!-- End Mobile Menu -->
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
+<jsp:include page="public/nav.jsp"/>
 <!-- header-area-end -->
 
 
@@ -148,7 +36,7 @@
 <main>
   <!-- slider-area -->
 
-  <section class="slider-area slider-bg" data-background="img/banner/s_slider_bg.jpg">
+  <section class="slider-area slider-bg" data-background="css_lib/img/banner/s_slider_bg.jpg">
     <div class="slider-active">
       <div class="slider-item">
         <div class="container">
@@ -211,7 +99,7 @@
                    data-animation="fadeInRight"
                    data-delay="1s">
                 <div class="movie-poster">
-                  <img src="img/P2.jpg" alt="">
+                  <img src="css_lib/img/P2.jpg" alt="">
                   <ul class="overlay-btn">
                     <li class="rating">
                       <i class="fas fa-star"></i>
@@ -267,7 +155,7 @@
                    data-animation="fadeInRight"
                    data-delay="1s">
                 <div class="movie-poster">
-                  <img src="img/P3.jpg" alt="">
+                  <img src="css_lib/img/P3.jpg" alt="">
                   <ul class="overlay-btn">
                     <li class="rating">
                       <i class="fas fa-star"></i>
@@ -321,7 +209,7 @@
                    data-animation="fadeInRight"
                    data-delay="1s">
                 <div class="movie-poster">
-                  <img src="img/P4.jpg" alt="">
+                  <img src="css_lib/img/P4.jpg" alt="">
                   <ul class="overlay-btn">
                     <li class="rating">
                       <i class="fas fa-star"></i>
@@ -374,8 +262,8 @@
 
 
   <!-- up-coming-movie-area -->
-  <section class="ucm-area ucm-bg" data-background="img/bg/ucm_bg.jpg">
-    <div class="ucm-bg-shape" data-background="img/bg/ucm_bg_shape.png"></div>
+  <section class="ucm-area ucm-bg" data-background="css_lib/img/bg/ucm_bg.jpg">
+    <div class="ucm-bg-shape" data-background="css_lib/img/bg/ucm_bg_shape.png"></div>
     <div class="container">
       <div class="row align-items-end mb-55">
         <div class="col-lg-6">
@@ -391,7 +279,7 @@
           <div class="ucm-active owl-carousel">
             <div class="movie-item mb-50">
               <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/P1.jpg" alt=""></a>
+                <a href="movie-details.html"><img src="css_lib/img/P1.jpg" alt=""></a>
               </div>
               <div class="movie-content">
                 <div class="top">
@@ -411,7 +299,7 @@
             </div>
             <div class="movie-item mb-50">
               <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/P2.jpg" alt=""></a>
+                <a href="movie-details.html"><img src="css_lib/img/P2.jpg" alt=""></a>
               </div>
               <div class="movie-content">
                 <div class="top">
@@ -431,7 +319,7 @@
             </div>
             <div class="movie-item mb-50">
               <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/P3.jpg" alt=""></a>
+                <a href="movie-details.html"><img src="css_lib/img/P3.jpg" alt=""></a>
               </div>
               <div class="movie-content">
                 <div class="top">
@@ -451,7 +339,7 @@
             </div>
             <div class="movie-item mb-50">
               <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/P4.jpg" alt=""></a>
+                <a href="movie-details.html"><img src="css_lib/img/P4.jpg" alt=""></a>
               </div>
               <div class="movie-content">
                 <div class="top">
@@ -475,7 +363,7 @@
           <div class="ucm-active owl-carousel">
             <div class="movie-item mb-50">
               <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/poster/ucm_poster05.jpg" alt=""></a>
+                <a href="movie-details.html"><img src="css_lib/img/poster/ucm_poster05.jpg" alt=""></a>
               </div>
               <div class="movie-content">
                 <div class="top">
@@ -495,7 +383,7 @@
             </div>
             <div class="movie-item mb-50">
               <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/poster/ucm_poster06.jpg" alt=""></a>
+                <a href="movie-details.html"><img src="css_lib/img/poster/ucm_poster06.jpg" alt=""></a>
               </div>
               <div class="movie-content">
                 <div class="top">
@@ -515,7 +403,7 @@
             </div>
             <div class="movie-item mb-50">
               <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/poster/ucm_poster07.jpg" alt=""></a>
+                <a href="movie-details.html"><img src="css_lib/img/poster/ucm_poster07.jpg" alt=""></a>
               </div>
               <div class="movie-content">
                 <div class="top">
@@ -535,7 +423,7 @@
             </div>
             <div class="movie-item mb-50">
               <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/poster/ucm_poster08.jpg" alt=""></a>
+                <a href="movie-details.html"><img src="css_lib/img/poster/ucm_poster08.jpg" alt=""></a>
               </div>
               <div class="movie-content">
                 <div class="top">
@@ -555,7 +443,7 @@
             </div>
             <div class="movie-item mb-50">
               <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/poster/ucm_poster03.jpg" alt=""></a>
+                <a href="movie-details.html"><img src="css_lib/img/poster/ucm_poster03.jpg" alt=""></a>
               </div>
               <div class="movie-content">
                 <div class="top">
@@ -579,7 +467,7 @@
           <div class="ucm-active owl-carousel">
             <div class="movie-item mb-50">
               <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/poster/ucm_poster01.jpg" alt=""></a>
+                <a href="movie-details.html"><img src="css_lib/img/poster/ucm_poster01.jpg" alt=""></a>
               </div>
               <div class="movie-content">
                 <div class="top">
@@ -599,7 +487,7 @@
             </div>
             <div class="movie-item mb-50">
               <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/poster/ucm_poster02.jpg" alt=""></a>
+                <a href="movie-details.html"><img src="css_lib/img/poster/ucm_poster02.jpg" alt=""></a>
               </div>
               <div class="movie-content">
                 <div class="top">
@@ -619,7 +507,7 @@
             </div>
             <div class="movie-item mb-50">
               <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/poster/ucm_poster03.jpg" alt=""></a>
+                <a href="movie-details.html"><img src="css_lib/img/poster/ucm_poster03.jpg" alt=""></a>
               </div>
               <div class="movie-content">
                 <div class="top">
@@ -639,7 +527,7 @@
             </div>
             <div class="movie-item mb-50">
               <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/poster/ucm_poster04.jpg" alt=""></a>
+                <a href="movie-details.html"><img src="css_lib/img/poster/ucm_poster04.jpg" alt=""></a>
               </div>
               <div class="movie-content">
                 <div class="top">
@@ -659,7 +547,7 @@
             </div>
             <div class="movie-item mb-50">
               <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/poster/ucm_poster05.jpg" alt=""></a>
+                <a href="movie-details.html"><img src="css_lib/img/poster/ucm_poster05.jpg" alt=""></a>
               </div>
               <div class="movie-content">
                 <div class="top">
@@ -686,7 +574,7 @@
 
 
   <!-- top-rated-movie -->
-  <section class="top-rated-movie tr-movie-bg" data-background="img/bg/tr_movies_bg.jpg">
+  <section class="top-rated-movie tr-movie-bg" data-background="css_lib/img/bg/tr_movies_bg.jpg">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
@@ -711,7 +599,7 @@
         <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
           <div class="movie-item mb-60">
             <div class="movie-poster">
-              <a href="movie-details.html"><img src="img/P1.jpg" alt=""></a>
+              <a href="movie-details.html"><img src="css_lib/img/P1.jpg" alt=""></a>
             </div>
             <div class="movie-content">
               <div class="top">
@@ -733,7 +621,7 @@
         <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-one cat-three">
           <div class="movie-item mb-60">
             <div class="movie-poster">
-              <a href="movie-details.html"><img src="img/P2.jpg" alt=""></a>
+              <a href="movie-details.html"><img src="css_lib/img/P2.jpg" alt=""></a>
             </div>
             <div class="movie-content">
               <div class="top">
@@ -755,7 +643,7 @@
         <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
           <div class="movie-item mb-60">
             <div class="movie-poster">
-              <a href="movie-details.html"><img src="img/P3.jpg" alt=""></a>
+              <a href="movie-details.html"><img src="css_lib/img/P3.jpg" alt=""></a>
             </div>
             <div class="movie-content">
               <div class="top">
@@ -777,7 +665,7 @@
         <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-one cat-three">
           <div class="movie-item mb-60">
             <div class="movie-poster">
-              <a href="movie-details.html"><img src="img/P4.jpg" alt=""></a>
+              <a href="movie-details.html"><img src="css_lib/img/P4.jpg" alt=""></a>
             </div>
             <div class="movie-content">
               <div class="top">
@@ -799,7 +687,7 @@
         <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
           <div class="movie-item mb-60">
             <div class="movie-poster">
-              <a href="movie-details.html"><img src="img/P1.jpg" alt=""></a>
+              <a href="movie-details.html"><img src="css_lib/img/P1.jpg" alt=""></a>
             </div>
             <div class="movie-content">
               <div class="top">
@@ -821,7 +709,7 @@
         <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-one cat-three">
           <div class="movie-item mb-60">
             <div class="movie-poster">
-              <a href="movie-details.html"><img src="img/P2.jpg" alt=""></a>
+              <a href="movie-details.html"><img src="css_lib/img/P2.jpg" alt=""></a>
             </div>
             <div class="movie-content">
               <div class="top">
@@ -843,7 +731,7 @@
         <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
           <div class="movie-item mb-60">
             <div class="movie-poster">
-              <a href="movie-details.html"><img src="img/P3.jpg" alt=""></a>
+              <a href="movie-details.html"><img src="css_lib/img/P3.jpg" alt=""></a>
             </div>
             <div class="movie-content">
               <div class="top">
@@ -865,7 +753,7 @@
         <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-one cat-three">
           <div class="movie-item mb-60">
             <div class="movie-poster">
-              <a href="movie-details.html"><img src="img/P4.jpg" alt=""></a>
+              <a href="movie-details.html"><img src="css_lib/img/P4.jpg" alt=""></a>
             </div>
             <div class="movie-content">
               <div class="top">
@@ -898,68 +786,26 @@
 
 
 <!-- footer-area -->
-<footer>
-  <div class="footer-top-wrap">
-    <div class="container">
-      <div class="footer-menu-wrap">
-        <div class="row">
-          <div class="col-lg-2">
-            <div class="footer-logo">
-              <a href="index.html"><img src="img/logo/logo.png" alt=""></a>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="copyright-wrap">
-              <div class="container ">
-                <div class="copyright-text">
-                  <p>Copyright &copy; 2022. All Rights Reserved By zyx&zzy&yqx</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="footer-menu">
-              <nav>
-                <ul class="navigation">
-                  <li><a href="index.html">主页</a></li>
-                  <li><a href="index.html">全部电影</a></li>
-                  <li><a href="index.html">电影推荐</a></li>
-                  <li><a href="index.html">个人观影统计</a></li>
-                  <li><a href="pricing.html">个人信息</a></li>
-                </ul>
-
-              </nav>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-</footer>
+<jsp:include page="public/footer.jsp"/>
 <!-- footer-area-end -->
 
 
 <!-- JS here -->
-<script src="js/vendor/jquery-3.6.0.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/isotope.pkgd.min.js"></script>
-<script src="js/imagesloaded.pkgd.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.odometer.min.js"></script>
-<script src="js/jquery.appear.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/ajax-form.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/aos.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+<script src="css_lib/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="css_lib/js/popper.min.js"></script>
+<script src="css_lib/js/bootstrap.min.js"></script>
+<script src="css_lib/js/isotope.pkgd.min.js"></script>
+<script src="css_lib/js/imagesloaded.pkgd.min.js"></script>
+<script src="css_lib/js/jquery.magnific-popup.min.js"></script>
+<script src="css_lib/js/owl.carousel.min.js"></script>
+<script src="css_lib/js/jquery.odometer.min.js"></script>
+<script src="css_lib/js/jquery.appear.js"></script>
+<script src="css_lib/js/slick.min.js"></script>
+<script src="css_lib/js/ajax-form.js"></script>
+<script src="css_lib/js/wow.min.js"></script>
+<script src="css_lib/js/aos.js"></script>
+<script src="css_lib/js/plugins.js"></script>
+<script src="css_lib/js/main.js"></script>
 </body>
 </html>
 

@@ -1,41 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: yiyi
-  Date: 2021/10/24
-  Time: 23:50
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html class="no-js" lang="">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>目唯 - Online Movies & TV Shows Template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- CSS here -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/odometer.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
-</head>
+<jsp:include page="public/header.jsp"/>
 <body>
 
-<!-- preloader -->
+<!--载入动画 -->
 <div id="preloader">
     <div id="loading-center">
         <div id="loading-center-absolute">
@@ -43,110 +13,17 @@
         </div>
     </div>
 </div>
-<!-- preloader-end -->
 
 <!-- Scroll-top -->
 <button class="scroll-top scroll-to-target" data-target="html">
     <i class="fas fa-angle-up"></i>
 </button>
-<!-- Scroll-top-end-->
 
-<!-- header-area -->
-<header class="header-style-two">
-    <div id="sticky-header" class="menu-area">
-        <div class="container custom-container">
-            <div class="row">
-                <div class="col-8">
-                    <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
-                    <div class="menu-wrap">
-                        <nav class="menu-nav show">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="img/logo/logo.png" alt="Logo">
-                                </a>
-                            </div>
-                            <div class="navbar-wrap main-menu d-none d-lg-flex">
-                                <ul class="navigation">
-                                    <li class="active menu-item-has-children"><a href="#">主页</a>
-                                    </li>
-                                    <li class="menu-item-has-children"><a href="#">全部电影</a>
-                                    </li>
-                                    <li><a href="tv-show.html">电影推荐</a></li>
-                                    <li><a href="pricing.html">个人观影统计</a></li>
-                                    <li><a href="pricing.html">个人信息</a></li>
-                                </ul>
-                            </div>
-                            <div class="header-action d-none d-md-block">
-                                <ul>
-                                    <s:if test="#session.User==null">
-                                        <li class="header-btn"><a href="login.jsp" class="btn">登录</a></li>
-                                        <li class="header-btn"><a href="register.jsp" class="btn">注册</a></li>
-                                    </s:if>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                    <!-- Mobile Menu  -->
-                    <div class="mobile-menu">
-                        <div class="close-btn"><i class="fas fa-times"></i></div>
-
-                        <nav class="menu-box">
-                            <div class="nav-logo"><a href="index.html"><img src="img/logo/logo.png" alt="" title=""></a>
-                            </div>
-                            <div class="menu-outer">
-                                <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-
-                                <ul class="navigation">
-                                    <li class="active menu-item-has-children"><a href="#">Home</a>
-                                        <ul class="submenu">
-                                            <li><a href="index.html">Home One</a></li>
-                                            <li class="active"><a href="index-2.html">Home Two</a></li>
-                                        </ul>
-                                        <div class="dropdown-btn"><span class="fas fa-angle-down"></span></div>
-                                    </li>
-                                    <li class="menu-item-has-children"><a href="#">Movie</a>
-                                        <ul class="submenu">
-                                            <li><a href="movie.html">Movie</a></li>
-                                            <li><a href="movie-details.html">Movie Details</a></li>
-                                        </ul>
-                                        <div class="dropdown-btn"><span class="fas fa-angle-down"></span></div>
-                                    </li>
-                                    <li><a href="tv-show.html">tv show</a></li>
-                                    <li><a href="pricing.html">Pricing</a></li>
-                                    <li class="menu-item-has-children"><a href="#">blog</a>
-                                        <ul class="submenu">
-                                            <li><a href="blog.html">Our Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                        <div class="dropdown-btn"><span class="fas fa-angle-down"></span></div>
-                                    </li>
-                                    <li><a href="contact.html">contacts</a></li>
-                                </ul>
-                            </div>
-                            <div class="social-links">
-                                <ul class="clearfix">
-                                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-instagram"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-youtube"></span></a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                    <div class="menu-backdrop"></div>
-                    <!-- End Mobile Menu -->
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- header-area-end -->
-
+<jsp:include page="public/nav.jsp"/>
 
 <!-- main-area -->
 <main>
-    <section class="slider-area slider-bg" data-background="img/banner/s_slider_bg.jpg">
+    <section class="slider-area slider-bg" data-background="css_lib/img/banner/s_slider_bg.jpg">
         <div class="container  mt-5 p-0" style="rgba(0,0,0,0.5);">
             <div class="row no-gutters">
                 <div class="col-sm-6 align-self-center">
@@ -186,13 +63,13 @@
                              data-dots="true" data-items="1" data-items-laptop="1" data-items-tab="1"
                              data-items-mobile="1" data-items-mobile-sm="1" data-margin="0">
                             <div class="item">
-                                <img src="img/sign-in-1.png" class="img-fluid mb-4" alt="logo">
+                                <img src="css_lib/img/sign-in-1.png" class="img-fluid mb-4" alt="logo">
                             </div>
                             <div class="item">
-                                <img src="img/sign-in-2.png" class="img-fluid mb-4" alt="logo">
+                                <img src="css_lib/img/sign-in-2.png" class="img-fluid mb-4" alt="logo">
                             </div>
                             <div class="item">
-                                <img src="img/sign-in-3.png" class="img-fluid mb-4" alt="logo">
+                                <img src="css_lib/img/sign-in-3.png" class="img-fluid mb-4" alt="logo">
                             </div>
                         </div>
                     </div>
@@ -207,72 +84,31 @@
 
 
 <!-- footer-area -->
-<footer>
-    <div class="footer-top-wrap">
-        <div class="container">
-            <div class="footer-menu-wrap">
-                <div class="row">
-                    <div class="col-lg-2">
-                        <div class="footer-logo">
-                            <a href="index.html"><img src="img/logo/logo.png" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="copyright-wrap">
-                            <div class="container ">
-                                <div class="copyright-text">
-                                    <p>Copyright &copy; 2022. All Rights Reserved By zyx&zzy&yqx</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="footer-menu">
-                            <nav>
-                                <ul class="navigation">
-                                    <li><a href="index.html">主页</a></li>
-                                    <li><a href="index.html">全部电影</a></li>
-                                    <li><a href="index.html">电影推荐</a></li>
-                                    <li><a href="index.html">个人观影统计</a></li>
-                                    <li><a href="pricing.html">个人信息</a></li>
-                                </ul>
-
-                            </nav>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-</footer>
+<jsp:include page="public/footer.jsp"/>
 <!-- footer-area-end -->
 
 <!-- JS here -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/vendor/jquery-3.6.0.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/isotope.pkgd.min.js"></script>
-<script src="js/imagesloaded.pkgd.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.odometer.min.js"></script>
-<script src="js/jquery.appear.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/ajax-form.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/aos.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+
+<script src="css_lib/js/jquery.min.js"></script>
+<script src="css_lib/js/bootstrap.min.js"></script>
+<script src="css_lib/js/owl.carousel.min.js"></script>
+<script src="css_lib/js/jquery.magnific-popup.min.js"></script>
+<script src="css_lib/js/custom.js"></script>
+<script src="css_lib/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="css_lib/js/popper.min.js"></script>
+<script src="css_lib/js/bootstrap.min.js"></script>
+<script src="css_lib/js/isotope.pkgd.min.js"></script>
+<script src="css_lib/js/imagesloaded.pkgd.min.js"></script>
+<script src="css_lib/js/jquery.magnific-popup.min.js"></script>
+<script src="css_lib/js/owl.carousel.min.js"></script>
+<script src="css_lib/js/jquery.odometer.min.js"></script>
+<script src="css_lib/js/jquery.appear.js"></script>
+<script src="css_lib/js/slick.min.js"></script>
+<script src="css_lib/js/ajax-form.js"></script>
+<script src="css_lib/js/wow.min.js"></script>
+<script src="css_lib/js/aos.js"></script>
+<script src="css_lib/js/plugins.js"></script>
+<script src="css_lib/js/main.js"></script>
 
 
 </body>
