@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  /*box-sizing: border-box;*/
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-weight: normal;
+}
+
+html,
+body {
+  font-family: "微软雅黑";
+  height: 100%;
+}
+
+#app{
+    height: 100%;
+    background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button,
+textarea {
+  outline: none;
+}
+/*小手*/
+.hand{
+  cursor:pointer;
+}
+* {
+  -webkit-touch-callout: none;
+  /*系统默认菜单被禁用*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  -moz-user-select: none;
+  /*火狐*/
+  -ms-user-select: none;
+  /*IE10*/
+  user-select: none;
+}
+
+input,
+textarea {
+  -webkit-user-select: auto;
+  /*webkit浏览器*/
+}
+
+/*清除浮动*/
+.clearfix:before,.clearfix:after {content:"";display:table;} 
+.clearfix:after { clear:both; }
+.clearfix{ zoom:1; } 
+
+
+
+/*mint-ui的messageBox组件样式全局引入*/
+.mint-indicator-wrapper {
+  z-index: 999 !important;
+}
+
+.mint-indicator-mask {
+  z-index: 999 !important;
+}
+
+.mint-msgbox {
+  width: 75%!important;
+  border-radius: 6px!important;
+}
+.mint-msgbox-message {
+  color: #333!important;
+
+}
+.mint-msgbox-content {
+  padding: 20px 0 20px!important;
+  border-bottom: 1px solid #ededed!important;
+}
+.mint-msgbox-cancel {
+  font-size: 16px!important;
+  color: #61a7f2!important;
+  border-right: 1px solid #ededed!important;
+}
+.mint-msgbox-confirm {
+  font-size: 16px!important;
+  color: #61a7f2!important;
+}
