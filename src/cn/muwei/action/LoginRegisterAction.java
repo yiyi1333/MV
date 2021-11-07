@@ -1,6 +1,6 @@
 package cn.muwei.action;
 
-import cn.muwei.po.User;
+import cn.muwei.entity.User;
 import cn.muwei.service.LoginRegisterService;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
@@ -11,7 +11,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.Map;
 
 public class LoginRegisterAction extends ActionSupport implements ServletContextAware, ServletRequestAware, ServletResponseAware {
     private User loginUser;

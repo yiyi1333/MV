@@ -1,9 +1,7 @@
 package cn.muwei.service;
 
 import cn.muwei.dao.UserDAO;
-import cn.muwei.po.User;
-
-import java.util.List;
+import cn.muwei.entity.User;
 
 public class LoginRegisterService {
     public boolean login(User loginUser){
