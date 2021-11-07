@@ -1,4 +1,4 @@
-package cn.muwei.po;
+package cn.muwei.entity;
 
 public class User {
     private int id;

@@ -1,4 +1,4 @@
-package cn.muwei.po;
+package cn.muwei.entity;
 
 public class Movie {
     private String movid;

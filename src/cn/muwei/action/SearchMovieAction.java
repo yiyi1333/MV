@@ -1,6 +1,5 @@
 package cn.muwei.action;
 
-import cn.muwei.po.User;
 import cn.muwei.service.SearchMovieService;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
