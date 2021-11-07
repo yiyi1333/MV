@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-dojo-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: rainbow
@@ -227,7 +228,7 @@
                   <div class="mint-header-height"></div>
                 </div>
                 <div class="main">
-                  <form id="form1" runat="server">
+                  <form id="form1" runat="server" action="question.action" method="get">
                     <div class="main-list clearfix">
                       <transition-group :name="transitionName">
                         <div class="problemList" v-show="dataIndex === index"
@@ -276,10 +277,10 @@
                       <div class="btn-groups clearfix">
                         <span v-show="isPrev" class="submit prev" @click="prev">上一题</span>
                         <span v-show="isNext" class="submit next" @click="next">下一题</span>
-                        <span v-show="isSubmit" class="submit save" @click="save"> <a href="index.jsp">提交</a> </span>
+<%--                        <span v-show="isSubmit" class="submit save" @click="save"> <a href="index.jsp">提交</a> </span>--%>
+                        <input type="submit" v-show="isSubmit" class="submit save" value="提交">
                       </div>
                     </div>
-
                   </form>
                 </div>
               </div>

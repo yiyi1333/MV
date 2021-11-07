@@ -12,7 +12,7 @@
     <title>目唯</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="referrer" content="no-referrer">
     <link rel="shortcut icon" type="image/x-icon" href="css_lib/img/favicon.png">
 
     <!-- CSS here -->
