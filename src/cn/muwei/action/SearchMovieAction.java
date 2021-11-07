@@ -1,5 +1,6 @@
 package cn.muwei.action;
 
+import cn.muwei.entity.Movie;
 import cn.muwei.service.SearchMovieService;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
@@ -70,6 +71,9 @@ public class SearchMovieAction extends ActionSupport implements ServletContextAw
     public String searchmoviebyid(){
         String movid = request.getParameter("movid");
         SearchMovieService service = new SearchMovieService();
+        Movie movie = service.searchmoviebyid(movid);
+        request.setAttribute("movie", movie);
+        System.out.println(movie.getSummary());
         return "detail";
     }
 }

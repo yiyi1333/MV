@@ -49,8 +49,8 @@ public class testAction implements ServletRequestAware {
         User user = (User) session.getAttribute("User");
         UserSimilarityDAO userSimilarityDAO = new UserSimilarityDAO();
         userSimilarities = userSimilarityDAO.getCommonUser(user.getId());
-        if(userSimilarities.size() < 40){
-            System.out.println("少于40个");
+        if(userSimilarities.size() < 20){
+            System.out.println("少于20个");
         }
         movies = userSimilarityDAO.getRecommend(userSimilarities, 40);
         userSimilarityDAO.close();

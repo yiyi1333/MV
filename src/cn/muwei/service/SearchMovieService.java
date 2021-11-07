@@ -1,6 +1,7 @@
 package cn.muwei.service;
 
 import cn.muwei.dao.MovieDAO;
+import cn.muwei.entity.Movie;
 
 import java.util.List;
 
@@ -30,5 +31,12 @@ public class SearchMovieService {
         List list = dao.searchmovieBykeyword(keyword, 100);
         dao.close();
         return list;
+    }
+
+    public Movie searchmoviebyid(String movid){
+        MovieDAO dao = new MovieDAO();
+        Movie movie = dao.searchmovieByid(movid);
+        dao.close();
+        return movie;
     }
 }

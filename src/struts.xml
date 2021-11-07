@@ -30,5 +30,8 @@
         <action name="exit" class="cn.muwei.action.LoginRegisterAction" method="exit">
             <result name="exit">/login.jsp</result>
         </action>
+        <action name="detail" class="cn.muwei.action.SearchMovieAction" method="searchmoviebyid">
+            <result name="detail">/detail.jsp</result>
+        </action>
     </package>
 </struts>
