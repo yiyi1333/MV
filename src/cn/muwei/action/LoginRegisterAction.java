@@ -61,6 +61,7 @@ public class LoginRegisterAction extends ActionSupport implements ServletContext
         }
     }
 
+
 //    public void validate(){
 //        String account = loginUser.getUsername();
 //        String pwd = loginUser.getPassword();

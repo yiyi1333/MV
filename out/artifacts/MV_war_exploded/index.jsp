@@ -38,6 +38,8 @@
 
   <section class="slider-area slider-bg" data-background="css_lib/img/banner/s_slider_bg.jpg">
     <div class="slider-active">
+
+
       <div class="slider-item">
         <div class="container">
           <div class="row align-items-center">
@@ -46,7 +48,7 @@
                    data-animation="fadeInRight"
                    data-delay="1s">
                 <div class="movie-poster">
-                  <img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p1910812549.jpg" alt="">
+                  <div align="center"><img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p1910812549.jpg" alt=""></div>
                   <ul class="overlay-btn">
                     <li class="rating">
                       <i class="fas fa-star"></i>
@@ -63,6 +65,7 @@
                 </div>
               </div>
             </div>
+
             <div class="col-lg-6">
               <div class="banner-content">
                 <h6 class="sub-title" data-animation="fadeInUp" data-delay=".2s">目唯</h6>
@@ -88,6 +91,7 @@
                 </i> 进入详细信息页</a>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -731,7 +735,7 @@
         <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
           <div class="movie-item mb-60">
             <div class="movie-poster">
-              <a href="movie-details.html"><img src="css_lib/img/P3.jpg" alt=""></a>
+              <a href="movie-details.html"><img src="css_lib/img/P3.jpg" alt="" height="160.5" width="267.5"></a>
             </div>
             <div class="movie-content">
               <div class="top">
