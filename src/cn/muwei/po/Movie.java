@@ -1,7 +1,6 @@
 package cn.muwei.po;
 
 public class Movie {
-    private String movnum;
     private String movid;
     private String name;
     private String director;
@@ -18,8 +17,7 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(String movnum, String movid, String name, String director, String actor, String genre, String tag, String summary, double rate, int popular, String posterUrl, String releasetime, String length) {
-        this.movnum = movnum;
+    public Movie(String movid, String name, String director, String actor, String genre, String tag, String summary, double rate, int popular, String posterUrl, String releasetime, String length) {
         this.movid = movid;
         this.name = name;
         this.director = director;
@@ -34,13 +32,7 @@ public class Movie {
         this.length = length;
     }
 
-    public String getMovnum() {
-        return movnum;
-    }
 
-    public void setMovnum(String movnum) {
-        this.movnum = movnum;
-    }
 
     public String getMovid() {
         return movid;

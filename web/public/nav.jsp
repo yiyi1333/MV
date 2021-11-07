@@ -24,7 +24,7 @@
                                 <ul class="navigation">
                                     <li class="active menu-item-has-children"><a href="#">主页</a>
                                     </li>
-                                    <li class="menu-item-has-children"><a href="#">全部电影</a>
+                                    <li class="menu-item-has-children"><a href="searchallmovie.action">全部电影</a>
                                     </li>
                                     <li><a href="tv-show.html">电影推荐</a></li>
                                     <li><a href="pricing.html">个人观影统计</a></li>

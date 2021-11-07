@@ -23,6 +23,7 @@
 
 <!-- main-area -->
 <main>
+
     <section class="slider-area slider-bg" data-background="css_lib/img/banner/s_slider_bg.jpg">
         <div class="container  mt-5 p-0" style="rgba(0,0,0,0.5);">
             <div class="row no-gutters">
@@ -48,8 +49,6 @@
                                 <button type="submit" class="btn btn-primary float-right ">登录</button>
                             </div>
                             <div class="sign-info">
-                                <h4 class="dark-color d-inline-block line-height-2 text-primary">是否没有账号？ <a
-                                        href="sign-up.html" class="text-warning">注册</a></h4>
                                 <ul class="iq-social-media">
                                     <li><a href="#"><i class="ri-facebook-box-line"></i></a></li>
                                     <li><a href="#"><i class="ri-twitter-line"></i></a></li>
