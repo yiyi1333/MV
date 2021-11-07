@@ -146,4 +146,23 @@ public class MovieDAO extends BaseDAO{
         return movie;
     }
 
+    public Movie searchmovieByid(String movieid){
+        String sql = "select *\n" +
+                "from movieinfo\n" +
+                "where movieID = ?";
+        Movie movie = null;
+        try{
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, movieid);
+            ResultSet rst = pstmt.executeQuery();
+            if(rst.next()){
+                movie = new  Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
+                        rst.getString(8), rst.getString(9), rst.getString(11), rst.getString(10), rst.getString(12));
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return movie;
+    }
+
 }
