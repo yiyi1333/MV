@@ -13,10 +13,10 @@
 </head>
 <body>
 <table>
-    <th>
-    <td>编号</td>
-    <td>片名</td>
-    </th>
+    <tr>
+        <td>编号</td>
+        <td>片名</td>
+    </tr>
     <s:iterator value="movies">
         <tr>
             <td><s:property value="movid"/></td>
