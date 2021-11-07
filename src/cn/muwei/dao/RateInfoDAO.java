@@ -28,7 +28,7 @@ public class RateInfoDAO extends BaseDAO {
         }
     }
 
-    public ArrayList<RateInfo> getRateList(int id) {  // 根据用户id，查询用户的所有评分
+    public ArrayList<RateInfo> getRateList(int id) {  // 根据用户id，查询用户的所有评分,按电影id排序后输出
         String sql = "select * from weimu.ratinfo where user_num = ?";
         ArrayList<RateInfo> rates = new ArrayList<>();
         try {
