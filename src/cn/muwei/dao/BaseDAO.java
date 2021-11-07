@@ -8,6 +8,7 @@ import java.sql.Connection;
 
 public class BaseDAO {
     static DataSource dataSource;
+
     public BaseDAO(){
         try{
             if(dataSource == null){

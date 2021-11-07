@@ -3,10 +3,10 @@ package cn.muwei.entity;
 public class RateInfo {
     private int user_num, mov_num, rate;
 
-    RateInfo() {
+    public RateInfo() {
     }
 
-    RateInfo(int user_num, int mov_num, int rate) {
+    public RateInfo(int user_num, int mov_num, int rate) {
         this.user_num = user_num;
         this.mov_num = mov_num;
         this.rate = rate;
