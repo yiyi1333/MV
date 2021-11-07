@@ -27,5 +27,8 @@
         <action name="recommend" class="cn.muwei.action.testAction" method="displayRecommend">
             <result name="success">/recommend.jsp</result>
         </action>
+        <action name="exit" class="cn.muwei.action.LoginRegisterAction" method="exit">
+            <result name="exit">/login.jsp</result>
+        </action>
     </package>
 </struts>

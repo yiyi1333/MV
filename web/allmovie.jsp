@@ -88,7 +88,7 @@
                                             <%--                                        <i class="fas fa-star-half"></i>--%>
                                             <%--                                    </li>--%>
                                         <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">立即观看</a></li>
-                                        <li><a href="movie-details.html" class="btn">详情</a></li>
+                                        <li><a href="detail.action?movid=<s:property value="movid"/>" class="btn">详情</a></li>
                                     </ul>
                                 </div>
                                 <div class="movie-content">
@@ -124,7 +124,7 @@
                                             <%--                                        <i class="fas fa-star-half"></i>--%>
                                             <%--                                    </li>--%>
                                         <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">立即观看</a></li>
-                                        <li><a href="movie-details.html" class="btn">详情</a></li>
+                                        <li><a href="detail.action?movid=<s:property value="movid"/> " class="btn">详情</a></li>
                                     </ul>
                                 </div>
                                 <div class="movie-content">
@@ -159,7 +159,7 @@
 <%--                                        <i class="fas fa-star-half"></i>--%>
 <%--                                    </li>--%>
                                     <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">立即观看</a></li>
-                                    <li><a href="movie-details.html" class="btn">详情</a></li>
+                                    <li><a href="detail.action?movid=<s:property value="movid"/>" class="btn">详情</a></li>
                                 </ul>
                             </div>
                             <div class="movie-content">
@@ -193,7 +193,7 @@
 <%--                                        <i class="fas fa-star-half"></i>--%>
 <%--                                    </li>--%>
                                     <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">立即观看</a></li>
-                                    <li><a href="movie-details.html" class="btn">详情</a></li>
+                                    <li><a href="detail.action?movid=<s:property value="movid"/>" class="btn">详情</a></li>
                                 </ul>
                             </div>
                             <div class="movie-content">

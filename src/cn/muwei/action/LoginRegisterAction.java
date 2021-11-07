@@ -37,7 +37,9 @@ public class LoginRegisterAction extends ActionSupport implements ServletContext
 
     public String login(){
         LoginRegisterService service = new LoginRegisterService();
-        if(service.login(loginUser)){
+        int userid = service.login(loginUser);
+        if(userid != 0){
+            loginUser.setId(userid);
             HttpSession session = request.getSession();
             session.setAttribute("User", loginUser);
             return "success";
@@ -60,6 +62,14 @@ public class LoginRegisterAction extends ActionSupport implements ServletContext
         }
     }
 
+    public String exit(){
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("User");
+        if(user != null){
+            session.removeAttribute("User");
+        }
+        return "exit";
+    }
 
 //    public void validate(){
 //        String account = loginUser.getUsername();

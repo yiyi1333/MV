@@ -66,4 +66,10 @@ public class SearchMovieAction extends ActionSupport implements ServletContextAw
             return "noresult";
         }
     }
+
+    public String searchmoviebyid(){
+        String movid = request.getParameter("movid");
+        SearchMovieService service = new SearchMovieService();
+        return "detail";
+    }
 }
