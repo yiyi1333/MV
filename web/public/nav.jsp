@@ -37,6 +37,9 @@
                                         <li class="header-btn"><a href="login.jsp" class="btn">登录</a></li>
                                         <li class="header-btn"><a href="register.jsp" class="btn">注册</a></li>
                                     </s:if>
+                                    <s:else>
+                                        <li class="header-btn"><a href="exit.action" class="btn">退出</a></li>
+                                    </s:else>
                                 </ul>
                             </div>
                         </nav>
