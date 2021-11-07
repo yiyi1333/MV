@@ -15,14 +15,14 @@
 
 <Context reloadable="true">
     <Resource
-            name="root"
+            name="jdbc/weimu"
             type="javax.sql.DataSource"
-            maxActive="4"
+            maxActive="10"
             maxIdle="2"
             username="root"
             maxWait="5000"
             driverClassName="com.mysql.cj.jdbc.Driver"
             password="20011122"
-            url="jdbc:mysql://localhost:3306"
+            url="jdbc:mysql://localhost:3306/weimu?serverTimezone=GMT%2B8&amp;useSSL=false"
     />
 </Context>
