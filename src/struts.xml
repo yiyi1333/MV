@@ -20,5 +20,9 @@
             <result name="success">/allmovie.jsp</result>
             <result name="noresult">/error.jsp</result>
         </action>
+        <action name="searchmovie" class="cn.muwei.action.SearchMovieAction" method="searchmovie">
+            <result name="success">/allmovie.jsp</result>
+            <result name="noresult">/error.jsp</result>
+        </action>
     </package>
 </struts>

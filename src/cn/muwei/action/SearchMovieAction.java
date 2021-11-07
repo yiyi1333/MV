@@ -9,6 +9,7 @@ import org.apache.struts2.util.ServletContextAware;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 public class SearchMovieAction extends ActionSupport implements ServletContextAware, ServletRequestAware, ServletResponseAware {
@@ -37,11 +38,30 @@ public class SearchMovieAction extends ActionSupport implements ServletContextAw
     public String searchAllmovie(){
         SearchMovieService service = new SearchMovieService();
         List movielist = service.searchallmovie();
+        List moviechinese = service.searchmovie_Chinese();
+        List movieusa = service.searchmovie_Usa();
         if(movielist.size() != 0){
-            request.setAttribute("movielist", movielist);
+            HttpSession session = request.getSession();
+            session.setAttribute("movielist", movielist);
+            session.setAttribute("moviechinese", moviechinese);
+            session.setAttribute("movieusa", movieusa);
             return "success";
         }
         else {
+            System.out.println(movielist.size());
+            return "noresult";
+        }
+    }
+
+    public String searchmovie(){
+        SearchMovieService service = new SearchMovieService();
+        List movielist = service.searchmovie_keyword(keyword);
+        if(movielist.size() != 0){
+            request.setAttribute("movielist", movielist);
+            request.setAttribute("keyword", keyword);
+            return "success";
+        }
+        else{
             System.out.println(movielist.size());
             return "noresult";
         }

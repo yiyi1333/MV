@@ -11,4 +11,24 @@ public class SearchMovieService {
         dao.close();
         return list;
     }
+    public List searchmovie_Chinese(){
+        MovieDAO dao = new MovieDAO();
+        List list = dao.searchmovie("内地", 100);
+        dao.close();
+        return list;
+    }
+
+    public List searchmovie_Usa(){
+        MovieDAO dao = new MovieDAO();
+        List list = dao.searchmovie("美国", 100);
+        dao.close();
+        return list;
+    }
+
+    public List searchmovie_keyword(String keyword){
+        MovieDAO dao = new MovieDAO();
+        List list = dao.searchmovieBykeyword(keyword, 100);
+        dao.close();
+        return list;
+    }
 }
