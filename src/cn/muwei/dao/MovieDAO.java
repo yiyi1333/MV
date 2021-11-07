@@ -35,7 +35,7 @@ public class MovieDAO extends BaseDAO{
             ResultSet rst = pstat.executeQuery();
             while(rst.next()){
                 Movie temp = new Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
-                        rst.getDouble(8), rst.getInt(9), rst.getString(11), rst.getString(10), rst.getString(12));
+                        rst.getString(8), rst.getString(9), rst.getString(11), rst.getString(10), rst.getString(12));
                 list.add(temp);
             }
         }catch (SQLException e){

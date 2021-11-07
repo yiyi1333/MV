@@ -8,8 +8,8 @@ public class Movie {
     private String genre;
     private String tag;
     private String summary;
-    private double rate;
-    private int popular;
+    private String rate;
+    private String popular;
     private String posterUrl;
     private String releasetime;//上映时间
     private String length;//片长
@@ -17,7 +17,7 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(String movid, String name, String director, String actor, String genre, String tag, String summary, double rate, int popular, String posterUrl, String releasetime, String length) {
+    public Movie(String movid, String name, String director, String actor, String genre, String tag, String summary, String rate, String popular, String posterUrl, String releasetime, String length) {
         this.movid = movid;
         this.name = name;
         this.director = director;
@@ -31,8 +31,6 @@ public class Movie {
         this.releasetime = releasetime;
         this.length = length;
     }
-
-
 
     public String getMovid() {
         return movid;
@@ -90,19 +88,19 @@ public class Movie {
         this.summary = summary;
     }
 
-    public double getRate() {
+    public String getRate() {
         return rate;
     }
 
-    public void setRate(double rate) {
+    public void setRate(String rate) {
         this.rate = rate;
     }
 
-    public int getPopular() {
+    public String getPopular() {
         return popular;
     }
 
-    public void setPopular(int popular) {
+    public void setPopular(String popular) {
         this.popular = popular;
     }
 
