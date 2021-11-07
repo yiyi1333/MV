@@ -101,6 +101,7 @@ public class Movie {
     }
 
     public void setPopular(String popular) {
+
         this.popular = popular;
     }
 
