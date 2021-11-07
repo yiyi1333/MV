@@ -1,32 +1,27 @@
-//package cn.muwei.dao;
-//
-//import cn.muwei.entity.RateInfo;
-//import cn.muwei.entity.UserSimilarity;
-//
-//import java.sql.Connection;
-//import java.sql.SQLException;
-//import java.util.ArrayList;
-//import java.util.Comparator;
-//
-//public class UserSimilarityDAO extends BaseDAO{
-//    private Connection conn = null;
-//
-//    public UserSimilarityDAO() {
-//        try {
-//            conn = dataSource.getConnection();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    public void close() {
-//        try {
-//            conn.close();
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
-//    }
-//
+package cn.muwei.dao;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class UserSimilarityDAO extends BaseDAO {
+    private Connection conn = null;
+
+    public UserSimilarityDAO() {
+        try {
+            conn = dataSource.getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void close() {
+        try {
+            conn.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
 //    public static ArrayList<UserSimilarity> getCommonUser(int id, ArrayList<RateInfo> rateArrayList) throws Exception {
 //        ArrayList<UserSimilarity> ans = new ArrayList<>();
 //        for (int i = 1; i <= 3327; i++) {
@@ -61,4 +56,4 @@
 //        while (ans.size() > 20) ans.remove(ans.size() - 1);
 //        return ans;
 //    }
-//}
+}
