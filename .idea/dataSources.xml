@@ -12,5 +12,12 @@
       <jdbc-url>jdbc:mysql://rm-bp10ju74719fp6g4emo.mysql.rds.aliyuncs.com:3306/weimu</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="root" uuid="57e0c99e-d346-402c-8d9a-d840ed556a9c">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

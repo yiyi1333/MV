@@ -8,23 +8,26 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UserDAO extends BaseDAO{
+public class UserDAO extends BaseDAO {
     private Connection conn = null;
-    public UserDAO(){
+
+    public UserDAO() {
         try {
             conn = dataSource.getConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-    public void close(){
-        try{
+
+    public void close() {
+        try {
             conn.close();
-        }catch (SQLException throwables){
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
-    public User findByid(String name){
+
+    public User findByid(String name) {
         String sql = "select * from usrid\n" +
                 "where user_name = ?";
         User user = null;
@@ -32,7 +35,7 @@ public class UserDAO extends BaseDAO{
             PreparedStatement pstat = conn.prepareStatement(sql);
             pstat.setString(1, name);
             ResultSet rst = pstat.executeQuery();
-            if(rst.next()){
+            if (rst.next()) {
                 user = new User(rst.getInt(1), rst.getString(2), rst.getString(3));
             }
             return user;
@@ -42,23 +45,37 @@ public class UserDAO extends BaseDAO{
         }
     }
 
-    public boolean insertUser(User user){
+    public boolean insertUser(User user) {
         String sql = "insert into usrid\n" +
                 "set usrid.user_name = ?,\n" +
                 "    usrid.password = ?";
         boolean flag = false;
-        try{
+        try {
             PreparedStatement pstat = conn.prepareStatement(sql);
             pstat.setString(1, user.getUsername());
             pstat.setString(2, user.getPassword());
             int line = pstat.executeUpdate();
-            if(line != 0){
+            if (line != 0) {
                 flag = true;
             }
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
-            return flag;
         }
+        return flag;
+
+    }
+
+    public int size() {
+        String sql = "select count(*) num from usrid";
+        int num = 0;
+        try {
+            PreparedStatement pstat = conn.prepareStatement(sql);
+            ResultSet resultSet = pstat.executeQuery();
+            resultSet.next();
+            num = resultSet.getInt("num");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return num;
     }
 }
