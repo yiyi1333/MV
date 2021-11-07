@@ -131,16 +131,15 @@ public class MovieDAO extends BaseDAO{
     public Movie getMovieByNum(int num) {
         String id = getIDByNum(num);
         String sql = "select * from weimu.movieinfo where movieID = ?";
-        Movie movie = new Movie();
+        Movie movie = null;
 
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, id);
-            ResultSet resultSet = stmt.executeQuery();
-            resultSet.next();
-
-            movie.setMovid(resultSet.getString("movieID"));
-            movie.setName(resultSet.getString("name"));
+            ResultSet rst = stmt.executeQuery();
+            rst.next();
+            movie = new Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
+                    rst.getString(8), rst.getString(9), rst.getString(11), rst.getString(10), rst.getString(12));
         } catch (SQLException e) {
             e.printStackTrace();
         }

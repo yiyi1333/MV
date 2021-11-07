@@ -39,7 +39,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.jsp">Home</a></li>
-                                <li class="breadcrumb-item" aria-current="page"><a href="searchallmovie.action">All Movie</a></li>
+                                <li class="breadcrumb-item" aria-current="page"><a href="recommend.action">RECOMMEND MOVIE</a></li>
                             </ol>
                         </nav>
                     </div>
