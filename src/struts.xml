@@ -24,8 +24,8 @@
             <result name="success">/allmovie.jsp</result>
             <result name="noresult">/error.jsp</result>
         </action>
-        <action name="testAction" class="cn.muwei.action.testAction" method="displayRecommend">
-            <result name="success">/testRecommend.jsp</result>
+        <action name="recommend" class="cn.muwei.action.testAction" method="displayRecommend">
+            <result name="success">/recommend.jsp</result>
         </action>
     </package>
 </struts>

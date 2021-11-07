@@ -26,7 +26,7 @@
                                     </li>
                                     <li class="menu-item-has-children"><a href="searchallmovie.action">全部电影</a>
                                     </li>
-                                    <li><a href="tv-show.html">电影推荐</a></li>
+                                    <li><a href="recommend.action">电影推荐</a></li>
                                     <li><a href="pricing.html">个人观影统计</a></li>
                                     <li><a href="pricing.html">个人信息</a></li>
                                 </ul>

@@ -2,10 +2,12 @@ package cn.muwei.action;
 
 import cn.muwei.dao.UserSimilarityDAO;
 import cn.muwei.entity.Movie;
+import cn.muwei.entity.User;
 import cn.muwei.entity.UserSimilarity;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 
 public class testAction implements ServletRequestAware {
@@ -43,11 +45,11 @@ public class testAction implements ServletRequestAware {
     }
 
     public String displayRecommend() {
-        String str = request.getParameter("id");
-        String movieNumber = request.getParameter("number");
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("User");
         UserSimilarityDAO userSimilarityDAO = new UserSimilarityDAO();
-        userSimilarities = userSimilarityDAO.getCommonUser(Integer.parseInt(str));
-        movies = userSimilarityDAO.getRecommend(userSimilarities, Integer.parseInt(movieNumber));
+        userSimilarities = userSimilarityDAO.getCommonUser(Integer.parseInt(user.getUsername()));
+        movies = userSimilarityDAO.getRecommend(userSimilarities, 40);
         userSimilarityDAO.close();
         return "success";
     }
