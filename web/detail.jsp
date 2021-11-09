@@ -37,13 +37,13 @@
     <section class="movie-details-area" data-background="css_lib/img/bg/movie_details_bg.jpg">
         <div class="container">
             <div class="row align-items-center position-relative">
-                <div class="col-xl-3 col-lg-4">
+                <div class="col-xl-4 col-lg-4">
                     <div class="movie-details-img">
                         <img src="<s:property value="#request.movie.posterUrl"/> " alt="显示异常">
                         <a href="#" class="popup-video"><img src="css_lib/img/images/play_icon.png" alt=""></a>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-8">
+                <div class="col-xl-8 col-lg-8">
                     <div class="movie-details-content">
 <%--                        <h5>New Episodes</h5>--%>
                         <h2><s:property value="#request.movie.name"/> </h2>
@@ -70,13 +70,10 @@
                                     <h6>主要视频</h6>
                                     <span>流媒体频道</span>
                                 </li>
-                                <li class="watch"><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="btn popup-video"><i class="fas fa-play"></i>立即观看</a></li>
+                                <li class="watch"><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="btn popup-video"><i class="fas fa-play"></i>加入喜欢</a></li>
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="movie-details-btn">
-                    <a href="img/poster/movie_details_img.jpg" class="download-btn" download="">Download <img src="https://themebeyond.com/html/movflx/fonts/download.svg" alt=""></a>
                 </div>
             </div>
         </div>

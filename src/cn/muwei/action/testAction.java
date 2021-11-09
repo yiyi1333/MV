@@ -56,5 +56,4 @@ public class testAction implements ServletRequestAware {
         userSimilarityDAO.close();
         return "success";
     }
-
 }

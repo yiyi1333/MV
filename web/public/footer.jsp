@@ -31,14 +31,15 @@
                     <div class="col-lg-6">
                         <div class="footer-menu">
                             <nav>
-                                <ul class="navigation">
-                                    <li><a href="index.html">主页</a></li>
-                                    <li><a href="index.html">全部电影</a></li>
-                                    <li><a href="index.html">电影推荐</a></li>
-                                    <li><a href="index.html">个人观影统计</a></li>
+                                <ul class="navigation" style="padding-left: 20%">
+                                    <li class="active menu-item-has-children"><a href="./index.jsp">主页</a>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="searchallmovie.action">全部电影</a>
+                                    </li>
+                                    <li><a href="recommend.action">电影推荐</a></li>
+                                    <li><a href="pricing.html">个人观影统计</a></li>
                                     <li><a href="pricing.html">个人信息</a></li>
                                 </ul>
-
                             </nav>
                         </div>
                     </div>

@@ -9,20 +9,16 @@
 <!--        maxWait="5000"-->
 <!--        driverClassName="com.mysql.cj.jdbc.Driver"-->
 <!--        password="zzy@15712651279"-->
-<!--        url="jdbc:mysql://rm-bp10ju74719fp6g4emo.mysql.rds.aliyuncs.com:3306/weimu"-->
+<!--        url="jdbc:mysql://rm-bp10ju74719fp6g4emo.mysql.rds.aliyuncs.com:3306/weimu?serverTimezone=GMT%2B8&amp;useSSL=false"-->
 <!--    />-->
 <!--</Context>-->
-
 <Context reloadable="true">
     <Resource
             name="jdbc/weimu"
             type="javax.sql.DataSource"
-            maxActive="10"
-            maxIdle="2"
-            username="yiyi1333"
-            maxWait="5000"
+            username="root"
             driverClassName="com.mysql.cj.jdbc.Driver"
-            password="zzy@15712651279"
-            url="jdbc:mysql://rm-bp10ju74719fp6g4emo.mysql.rds.aliyuncs.com:3306/weimu?serverTimezone=GMT%2B8&amp;useSSL=false"
+            password="20011122"
+            url="jdbc:mysql://localhost:3306/weimu?serverTimezone=GMT%2B8&amp;useSSL=false"
     />
 </Context>

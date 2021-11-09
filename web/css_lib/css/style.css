@@ -1341,6 +1341,7 @@ label {
 }
 
 .movie-poster img {
+    width: 500px;
     max-width: 100%;
     border-radius: 5px;
 }
@@ -1819,6 +1820,7 @@ label {
 
 .movie-item-three .movie-poster::before {
     background: #14141d;
+    /*background: rgba(145, 59, 125, 0.8);*/
     border: 1px solid #2d292a;
 }
 

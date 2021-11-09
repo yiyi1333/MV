@@ -28,7 +28,6 @@
 
 <jsp:include page="public/nav.jsp"/>
 <main>
-
     <!-- breadcrumb-area -->
     <section class="breadcrumb-area breadcrumb-bg" data-background="css_lib/img/bg/breadcrumb_bg.jpg">
         <div class="container">
@@ -39,7 +38,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.jsp">Home</a></li>
-                                <li class="breadcrumb-item" aria-current="page"><a href="recommend.action">RECOMMEND MOVIE</a></li>
+                                <li class="breadcrumb-item" aria-current="page"><a href="searchallmovie.action">All Movie</a></li>
                             </ol>
                         </nav>
                     </div>
@@ -87,13 +86,13 @@
                                             <%--                                        <i class="fas fa-star"></i>--%>
                                             <%--                                        <i class="fas fa-star-half"></i>--%>
                                             <%--                                    </li>--%>
-                                        <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">立即观看</a></li>
+                                        <li><a href="#" class="popup-video btn">加入喜欢</a></li>
                                         <li><a href="detail.action?movid=<s:property value="movid"/>" class="btn">详情</a></li>
                                     </ul>
                                 </div>
                                 <div class="movie-content">
                                     <div class="top">
-                                        <h5 class="title"><a href="movie-details.html"><s:property value="name"/> </a></h5>
+                                        <h5 class="title"><a href="detail.action?movid=<s:property value="movid"/>"><s:property value="name"/> </a></h5>
                                         <span class="date"><s:property value="releasetime"/> </span>
                                     </div>
                                     <div class="bottom">
@@ -123,13 +122,13 @@
                                             <%--                                        <i class="fas fa-star"></i>--%>
                                             <%--                                        <i class="fas fa-star-half"></i>--%>
                                             <%--                                    </li>--%>
-                                        <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">立即观看</a></li>
-                                        <li><a href="detail.action?movid=<s:property value="movid"/> " class="btn">详情</a></li>
+                                        <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">加入喜欢</a></li>
+                                        <li><a href="detail.action?movid=<s:property value="movid"/>" class="btn">详情</a></li>
                                     </ul>
                                 </div>
                                 <div class="movie-content">
                                     <div class="top">
-                                        <h5 class="title"><a href="movie-details.html"><s:property value="name"/> </a></h5>
+                                        <h5 class="title"><a href="detail.action?movid=<s:property value="movid"/>"><s:property value="name"/> </a></h5>
                                         <span class="date"><s:property value="releasetime"/> </span>
                                     </div>
                                     <div class="bottom">
@@ -158,13 +157,13 @@
 <%--                                        <i class="fas fa-star"></i>--%>
 <%--                                        <i class="fas fa-star-half"></i>--%>
 <%--                                    </li>--%>
-                                    <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">立即观看</a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">加入喜欢</a></li>
                                     <li><a href="detail.action?movid=<s:property value="movid"/>" class="btn">详情</a></li>
                                 </ul>
                             </div>
                             <div class="movie-content">
                                 <div class="top">
-                                    <h5 class="title"><a href="movie-details.html"><s:property value="name"/> </a></h5>
+                                    <h5 class="title"><a href="detail.action?movid=<s:property value="movid"/>"><s:property value="name"/> </a></h5>
                                     <span class="date"><s:property value="releasetime"/> </span>
                                 </div>
                                 <div class="bottom">
@@ -192,13 +191,13 @@
 <%--                                        <i class="fas fa-star"></i>--%>
 <%--                                        <i class="fas fa-star-half"></i>--%>
 <%--                                    </li>--%>
-                                    <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">立即观看</a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">加入喜欢</a></li>
                                     <li><a href="detail.action?movid=<s:property value="movid"/>" class="btn">详情</a></li>
                                 </ul>
                             </div>
                             <div class="movie-content">
                                 <div class="top">
-                                    <h5 class="title"><a href="movie-details.html"><s:property value="name"/> </a></h5>
+                                    <h5 class="title"><a href="detail.action?movid=<s:property value="movid"/>"><s:property value="name"/> </a></h5>
                                     <span class="date"><s:property value="releasetime"/> </span>
                                 </div>
                                 <div class="bottom">
