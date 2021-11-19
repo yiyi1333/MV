@@ -36,6 +36,17 @@ public class SearchMovieAction extends ActionSupport implements ServletContextAw
         this.response = response;
     }
 
+    public String Rankmovie(){
+        SearchMovieService service = new SearchMovieService();
+        HttpSession session = request.getSession();
+        List ratelist = service.RankByrate();
+        System.out.println(ratelist.size());
+        List popularlist = service.RankBypopular();
+        session.setAttribute("ratelist", ratelist);
+        session.setAttribute("popularlist", popularlist);
+        return "success";
+    }
+
     public String searchAllmovie(){
         SearchMovieService service = new SearchMovieService();
         List movielist = service.searchallmovie();

@@ -39,4 +39,18 @@ public class SearchMovieService {
         dao.close();
         return movie;
     }
+
+    public List RankByrate(){
+        MovieDAO dao = new MovieDAO();
+        List list = dao.searchMovieOrderByRate(100);
+        dao.close();
+        return list;
+    }
+
+    public List RankBypopular(){
+        MovieDAO dao = new MovieDAO();
+        List list = dao.searchMovieOrderByPopular(100);
+        dao.close();
+        return list;
+    }
 }

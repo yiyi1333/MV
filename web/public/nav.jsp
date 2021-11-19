@@ -22,11 +22,12 @@
                             </div>
                             <div class="navbar-wrap main-menu d-none d-lg-flex" style="margin-right: 20%">
                                 <ul class="navigation" style="padding-left: 20%">
-                                    <li class="active menu-item-has-children"><a href="./index.jsp">主页</a>
+                                    <li class="menu-item-has-children"><a href="./index.jsp">主页</a>
                                     </li>
                                     <li class="menu-item-has-children"><a href="searchallmovie.action">全部电影</a>
                                     </li>
                                     <li><a href="recommend.action">电影推荐</a></li>
+                                    <li><a href="rank.action">电影排名</a> </li>
                                     <li><a href="pricing.html">个人观影统计</a></li>
                                     <li><a href="pricing.html">个人信息</a></li>
                                 </ul>
