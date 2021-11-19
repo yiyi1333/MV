@@ -37,8 +37,8 @@ public class MovieDAO extends BaseDAO{
             pstat.setInt(1, lines);
             ResultSet rst = pstat.executeQuery();
             while(rst.next()){
-                Movie temp = new Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
-                        rst.getString(8), rst.getString(9), rst.getString(11), rst.getString(10), rst.getString(12));
+                Movie temp = new  Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
+                        rst.getString(8), rst.getString(9), rst.getString(10), rst.getString(11), rst.getString(12));
                 list.add(temp);
             }
         }catch (SQLException e){
@@ -59,8 +59,8 @@ public class MovieDAO extends BaseDAO{
             pstat.setInt(2, lines);
             ResultSet rst = pstat.executeQuery();
             while(rst.next()){
-                Movie temp = new Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
-                        rst.getString(8), rst.getString(9), rst.getString(11), rst.getString(10), rst.getString(12));
+                Movie temp = new  Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
+                        rst.getString(8), rst.getString(9), rst.getString(10), rst.getString(11), rst.getString(12));
                 list.add(temp);
             }
         }catch (SQLException e){
@@ -86,8 +86,8 @@ public class MovieDAO extends BaseDAO{
             pstat.setInt(7, lines);
             ResultSet rst = pstat.executeQuery();
             while(rst.next()){
-                Movie temp = new Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
-                        rst.getString(8), rst.getString(9), rst.getString(11), rst.getString(10), rst.getString(12));
+                Movie temp = new  Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
+                        rst.getString(8), rst.getString(9), rst.getString(10), rst.getString(11), rst.getString(12));
                 list.add(temp);
             }
         }catch (SQLException e){
@@ -138,8 +138,8 @@ public class MovieDAO extends BaseDAO{
             stmt.setString(1, id);
             ResultSet rst = stmt.executeQuery();
             rst.next();
-            movie = new Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
-                    rst.getString(8), rst.getString(9), rst.getString(11), rst.getString(10), rst.getString(12));
+            movie = new  Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
+                    rst.getString(8), rst.getString(9), rst.getString(10), rst.getString(11), rst.getString(12));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -157,7 +157,7 @@ public class MovieDAO extends BaseDAO{
             ResultSet rst = pstmt.executeQuery();
             if(rst.next()){
                 movie = new  Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
-                        rst.getString(8), rst.getString(9), rst.getString(11), rst.getString(10), rst.getString(12));
+                        rst.getString(8), rst.getString(9), rst.getString(10), rst.getString(11), rst.getString(12));
             }
         }catch (SQLException e){
             e.printStackTrace();
@@ -165,4 +165,46 @@ public class MovieDAO extends BaseDAO{
         return movie;
     }
 
+    public List searchMovieOrderByRate(int lines){
+        String sql = "select *\n" +
+                "from movieinfo\n" +
+                "where rate != 'none'\n" +
+                "order by rate desc limit 0, ?";
+        List list = new ArrayList<Movie>();
+        try {
+            PreparedStatement pstat = conn.prepareStatement(sql);
+            pstat.setInt(1, lines);
+            ResultSet rst = pstat.executeQuery();
+            while (rst.next()){
+                Movie temp = new  Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
+                        rst.getString(8), rst.getString(9), rst.getString(10), rst.getString(11), rst.getString(12));
+                list.add(temp);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return list;
+    }
+
+    public List searchMovieOrderByPopular(int lines){
+        String sql = "select *\n" +
+                "from movieinfo\n" +
+                "order by popular desc limit 0, ?";
+        List list = new ArrayList<Movie>();
+        try {
+            PreparedStatement pstat = conn.prepareStatement(sql);
+            pstat.setInt(1, lines);
+            ResultSet rst = pstat.executeQuery();
+            while (rst.next()){
+                Movie temp = new  Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
+                        rst.getString(8), rst.getString(9), rst.getString(10), rst.getString(11), rst.getString(12));
+                list.add(temp);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return list;
+    }
 }
