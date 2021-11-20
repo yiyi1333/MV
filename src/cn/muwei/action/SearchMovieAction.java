@@ -1,6 +1,8 @@
 package cn.muwei.action;
 
+import cn.muwei.dao.UserSimilarityDAO;
 import cn.muwei.entity.Movie;
+import cn.muwei.entity.User;
 import cn.muwei.service.SearchMovieService;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
@@ -18,6 +20,7 @@ public class SearchMovieAction extends ActionSupport implements ServletContextAw
     private HttpServletRequest request;
     private HttpServletResponse response;
     private ServletContext application;
+
 
     public String getKeyword() {
         return keyword;
@@ -87,4 +90,5 @@ public class SearchMovieAction extends ActionSupport implements ServletContextAw
         System.out.println(movie.getSummary());
         return "detail";
     }
+
 }

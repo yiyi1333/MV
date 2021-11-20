@@ -96,4 +96,17 @@ public class testAction implements ServletRequestAware {
         userDAO.close();
         return "getWordCloud";
     }
+
+    public String index(){
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("User");
+        UserSimilarityDAO userSimilarityDAO = new UserSimilarityDAO();
+        userSimilarities = userSimilarityDAO.getCommonUser(user.getId());
+        if(userSimilarities.size() < 20){
+            System.out.println("少于20个");
+        }
+        movies = userSimilarityDAO.getRecommend(userSimilarities, 5);
+        userSimilarityDAO.close();
+        return "success";
+    }
 }
