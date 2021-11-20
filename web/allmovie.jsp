@@ -9,6 +9,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>>
 <html>
 <jsp:include page="public/header.jsp"/>
+
 <body>
 <!-- preloader -->
 <div id="preloader">

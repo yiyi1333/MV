@@ -48,6 +48,8 @@ public class MovieDAO extends BaseDAO{
         return list;
     }
 
+
+
     public List searchmovie(String keyword, int lines){
         String sql = "select * from movieinfo\n" +
                 "where tag LIKE ?" +
@@ -69,6 +71,8 @@ public class MovieDAO extends BaseDAO{
         }
         return list;
     }
+
+
 
     public List searchmovieBykeyword(String keyword, int lines){
         String sql = "select * from movieinfo\n" +
@@ -127,7 +131,6 @@ public class MovieDAO extends BaseDAO{
         return id;
     }
 
-    //
     public Movie getMovieByNum(int num) {
         String id = getIDByNum(num);
         String sql = "select * from weimu.movieinfo where movieID = ?";

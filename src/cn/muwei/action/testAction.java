@@ -1,5 +1,6 @@
 package cn.muwei.action;
 
+import cn.muwei.dao.UserDAO;
 import cn.muwei.dao.UserSimilarityDAO;
 import cn.muwei.entity.Movie;
 import cn.muwei.entity.User;
@@ -9,11 +10,31 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class testAction implements ServletRequestAware {
     ArrayList<Movie> movies;
     ArrayList<UserSimilarity> userSimilarities;
     private HttpServletRequest request;
+    TreeMap<String, Integer> genre;
+    TreeMap<String, Integer> actor;
+    String userid;
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public void setActor(TreeMap<String, Integer> actor) {
+        this.actor = actor;
+    }
+
+    public TreeMap<String, Integer> getActor() {
+        return actor;
+    }
 
     public ArrayList<Movie> getMovies() {
         return movies;
@@ -29,6 +50,15 @@ public class testAction implements ServletRequestAware {
 
     public void setUserSimilarities(ArrayList<UserSimilarity> userSimilarities) {
         this.userSimilarities = userSimilarities;
+    }
+
+    public void setGenre(TreeMap<String, Integer> genre) {
+        this.genre = genre;
+    }
+
+
+    public TreeMap<String, Integer> getGenre() {
+        return genre;
     }
 
     public HttpServletRequest getRequest() {
@@ -49,11 +79,21 @@ public class testAction implements ServletRequestAware {
         User user = (User) session.getAttribute("User");
         UserSimilarityDAO userSimilarityDAO = new UserSimilarityDAO();
         userSimilarities = userSimilarityDAO.getCommonUser(user.getId());
-        if(userSimilarities.size() < 20){
+        if (userSimilarities.size() < 20) {
             System.out.println("少于20个");
         }
         movies = userSimilarityDAO.getRecommend(userSimilarities, 40);
         userSimilarityDAO.close();
         return "success";
+    }
+
+    public String getWordCloud() {
+        UserDAO userDAO = new UserDAO();
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("User");
+        genre = userDAO.getGenreMap(user.getId(), 1000000);
+        actor = userDAO.getActorMap(user.getId(), 1000000);
+        userDAO.close();
+        return "getWordCloud";
     }
 }

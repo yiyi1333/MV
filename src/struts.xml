@@ -36,5 +36,8 @@
         <action name="rank" class="cn.muwei.action.SearchMovieAction" method="Rankmovie">
             <result name="success">/rank.jsp</result>
         </action>
+        <action name="getWordCloud" class="cn.muwei.action.testAction" method="getWordCloud">
+            <result name="getWordCloud">/wordcloud.jsp</result>
+        </action>
     </package>
 </struts>

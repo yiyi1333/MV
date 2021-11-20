@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="/struts-dojo-tags" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: hydrogen_zyx
@@ -12,10 +12,9 @@
     <title>test</title>
 </head>
 <body>
-<form action="testAction.action">
-    用户id：<input type="text" name="id"/>
-    条数：<input type="text" name="number"/>
-    <input type="submit">
-</form>
+<s:form action="getWordCloud">
+    <s:textfield name="userid"/>
+    <s:submit/>
+</s:form>
 </body>
 </html>

@@ -27,8 +27,8 @@
                                     <li class="menu-item-has-children"><a href="searchallmovie.action">全部电影</a>
                                     </li>
                                     <li><a href="recommend.action">电影推荐</a></li>
-                                    <li><a href="rank.action">电影排名</a> </li>
-                                    <li><a href="pricing.html">个人观影统计</a></li>
+                                    <li><a href="rank.action">电影排名</a></li>
+                                    <li><a href="getWordCloud.action">个人观影统计</a></li>
                                     <li><a href="pricing.html">个人信息</a></li>
                                 </ul>
                             </div>
@@ -53,7 +53,7 @@
 
                         <nav class="menu-box">
                             <div class="nav-logo"><a href="./index.jsp"><img src="css_lib/img/logo/logo.png" alt=""
-                                                                            title=""></a>
+                                                                             title=""></a>
                             </div>
                             <div class="menu-outer">
                                 <ul class="navigation">
