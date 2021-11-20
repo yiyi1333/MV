@@ -22,7 +22,7 @@
                             </div>
                             <div class="navbar-wrap main-menu d-none d-lg-flex" style="margin-right: 20%">
                                 <ul class="navigation" style="padding-left: 20%">
-                                    <li class="menu-item-has-children"><a href="./index.jsp">主页</a>
+                                    <li class="menu-item-has-children"><a href="indexrecommend.action">主页</a>
                                     </li>
                                     <li class="menu-item-has-children"><a href="searchallmovie.action">全部电影</a>
                                     </li>
@@ -39,8 +39,7 @@
                                         <li class="header-btn"><a href="register.jsp" class="btn">注册</a></li>
                                     </s:if>
                                     <s:else>
-                                        <h4>用户：</h4>
-                                        <h4><s:property value="#session.User.username"/></h4>
+                                        <h5><s:property value="#session.User.username"/></h5>
                                         <li class="header-btn"><a href="exit.action" class="btn">退出</a></li>
                                     </s:else>
                                 </ul>

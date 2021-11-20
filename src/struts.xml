@@ -9,7 +9,7 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
     <package name="strutsBean" extends="struts-default" namespace="/">
         <action name="login" class="cn.muwei.action.LoginRegisterAction" method="login">
-            <result name="success">/index.jsp</result>
+            <result name="success" type="redirectAction">indexrecommend</result>
             <result name="fail">/login.jsp</result>
         </action>
         <action name="register" class="cn.muwei.action.LoginRegisterAction" method="register">
@@ -38,6 +38,9 @@
         </action>
         <action name="getWordCloud" class="cn.muwei.action.testAction" method="getWordCloud">
             <result name="getWordCloud">/wordcloud.jsp</result>
+        </action>
+        <action name="indexrecommend" class="cn.muwei.action.testAction" method="index">
+            <result name="success">/index.jsp</result>
         </action>
     </package>
 </struts>
