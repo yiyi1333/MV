@@ -91,4 +91,13 @@ public class SearchMovieAction extends ActionSupport implements ServletContextAw
         return "detail";
     }
 
+    public String Collection(){
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("User");
+        List movielist = new SearchMovieService().CollectionList(user.getUsername());
+        if(movielist.size() != 0){
+            request.setAttribute("movielist", movielist);
+        }
+        return SUCCESS;
+    }
 }

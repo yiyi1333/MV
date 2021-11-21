@@ -123,7 +123,7 @@
                                             <%--                                        <i class="fas fa-star"></i>--%>
                                             <%--                                        <i class="fas fa-star-half"></i>--%>
                                             <%--                                    </li>--%>
-                                        <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">加入喜欢</a></li>
+                                        <li><a href="#" class="popup-video btn">加入喜欢</a></li>
                                         <li><a href="detail.action?movid=<s:property value="movid"/>" class="btn">详情</a></li>
                                     </ul>
                                 </div>
@@ -134,7 +134,7 @@
                                     </div>
                                     <div class="bottom">
                                         <ul>
-                                            <li><span class="quality"><s:property value="keyword"/> </span></li>
+                                            <li><span class="quality">搜索</span></li>
                                             <li>
                                                 <span class="duration"><i class="far fa-clock"></i><s:property value="length"/>  </span>
                                                 <span class="rating"><i class="fas fa-thumbs-up"></i> <s:property value="rate"/> </span>

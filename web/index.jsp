@@ -35,7 +35,36 @@
 <!-- main-area -->
 <main>
     <!-- slider-area -->
+    <script>
+        function collectmov(movid){
+            var xhttp = new XMLHttpRequest();
+            document.getElementById("collect" + movid).innerHTML = "已收藏";
+            xhttp.onreadystatechange=function (){
+                document.getElementById("collect" + movid).innerHTML = "已收藏";
+            }
+            xhttp.open("GET", "collection.action?movieid=" + movid, true);
+            xhttp.send();
+        }
 
+        function likemov(movid){
+            var xhttp = new XMLHttpRequest();
+            document.getElementById("like" + movid).innerHTML = "感谢评价";
+            xhttp.onreadystatechange=function (){
+                document.getElementById("like" + movid).innerHTML = "感谢评价";
+            }
+            xhttp.open("GET", "like.action?movieid=" + movid, true);
+            xhttp.send();
+        }
+        function unlikemov(movid){
+            var xhttp = new XMLHttpRequest();
+            document.getElementById("unlike" + movid).innerHTML = "感谢评价";
+            xhttp.onreadystatechange=function (){
+                document.getElementById("unlike" + movid).innerHTML = "感谢评价";
+            }
+            xhttp.open("GET", "unlike.action?movieid=" + movid, true);
+            xhttp.send();
+        }
+    </script>
     <section class="slider-area slider-bg" data-background="css_lib/img/banner/s_slider_bg.jpg">
         <div class="slider-active">
 
@@ -59,9 +88,9 @@
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                             </li>
-                                            <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">收藏</a></li>
-                                            <li><a href="movie-details.html" class="btn">喜欢</a></li>
-                                            <li><a href="movie-details.html" class="btn">不感兴趣</a></li>
+                                            <li><a id="collect<s:property value="movid"/>" href="#" class="btn" onclick="collectmov(<s:property value="movid"/>)">收藏</a></li>
+                                            <li><a id="like<s:property value="movid"/>" href="#" class="btn" onclick="likemov(<s:property value="movid"/>)">喜欢</a></li>
+                                            <li><a id="unlike<s:property value="movid"/>" href="#" class="btn" onclick="unlikemov(<s:property value="movid"/>)">不感兴趣</a></li>
                                         </ul>
                                     </div>
                                 </div>

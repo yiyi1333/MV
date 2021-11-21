@@ -29,7 +29,7 @@
                                     <li><a href="recommend.action">电影推荐</a></li>
                                     <li><a href="rank.action">电影排名</a></li>
                                     <li><a href="getWordCloud.action">个人观影统计</a></li>
-                                    <li><a href="pricing.html">个人信息</a></li>
+                                    <li><a href="collectionlist.action">收藏夹</a></li>
                                 </ul>
                             </div>
                             <div class="header-action d-none d-md-block justify-content-end" style="margin-right: -50%">
