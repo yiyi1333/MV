@@ -48,7 +48,26 @@ public class MovieDAO extends BaseDAO{
         return list;
     }
 
-
+    public List Collection(String username){
+        String sql = "select movieinfo.*\n" +
+                "from movieinfo,collection\n" +
+                "where collection.movieid = movieinfo.movieID and collection.user_name = ?";
+        List list = new ArrayList<Movie>();
+        try{
+            PreparedStatement pstat = conn.prepareStatement(sql);
+            pstat.setString(1, username);
+            ResultSet rst = pstat.executeQuery();
+            while(rst.next()){
+                Movie temp = new  Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
+                        rst.getString(8), rst.getString(9), rst.getString(10), rst.getString(11), rst.getString(12));
+                list.add(temp);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+        return list;
+    }
 
     public List searchmovie(String keyword, int lines){
         String sql = "select * from movieinfo\n" +

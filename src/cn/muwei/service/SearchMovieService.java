@@ -53,4 +53,11 @@ public class SearchMovieService {
         dao.close();
         return list;
     }
+
+    public List CollectionList(String username){
+        MovieDAO dao = new MovieDAO();
+        List list = dao.Collection(username);
+        dao.close();
+        return list;
+    }
 }
