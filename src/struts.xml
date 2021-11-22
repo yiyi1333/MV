@@ -13,7 +13,7 @@
             <result name="fail">/login.jsp</result>
         </action>
         <action name="register" class="cn.muwei.action.LoginRegisterAction" method="register">
-            <result name="success">/login.jsp</result>
+            <result name="success">/question.jsp</result>
             <result name="fail">/register.jsp</result>
         </action>
         <action name="searchallmovie" class="cn.muwei.action.SearchMovieAction" method="searchAllmovie">
@@ -65,6 +65,9 @@
         </action>
         <action name="collectionlist" class="cn.muwei.action.SearchMovieAction" method="Collection">
             <result name="success">/Collection.jsp</result>
+        </action>
+        <action name="QuestionAction" class="cn.muwei.action.LoginRegisterAction" method="QuestionAction">
+            <result name="success">/index.jsp</result>
         </action>
     </package>
 </struts>

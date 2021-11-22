@@ -37,11 +37,10 @@ public class RateInfoDAO extends BaseDAO {
             ResultSet resultSet = stmt.executeQuery();
             while (resultSet.next()) {
                 int mov_num = resultSet.getInt("mov_num");
-                int rate = resultSet.getInt("rate");
-                if (rate != 0) {
-                    RateInfo rateInfo = new RateInfo(id, mov_num, rate);
-                    rates.add(rateInfo);
-                }
+
+                RateInfo rateInfo = new RateInfo(id, mov_num, 0);
+                rates.add(rateInfo);
+
             }
         } catch (SQLException e) {
             e.printStackTrace();

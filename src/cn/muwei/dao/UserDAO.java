@@ -128,4 +128,26 @@ public class UserDAO extends BaseDAO {
         rateInfoDAO.close();
         return res;
     }
+
+    public void addRateInfo(int userid, int movid) {
+        String sql = "select * from weimu.ratinfo where user_num = ? and mov_num = ?";
+        try {
+            PreparedStatement pstat = conn.prepareStatement(sql);
+            pstat.setInt(1, userid);
+            pstat.setInt(2, movid);
+            ResultSet resultSet = pstat.executeQuery();
+            if (resultSet.next()) {
+                return;
+            }
+            sql = "insert into weimu.ratinfo(weimu.ratinfo.user_num,weimu.ratinfo.mov_num,weimu.ratinfo.rate) value (?,?,null)";
+            pstat = conn.prepareStatement(sql);
+            pstat.setInt(1, userid);
+            pstat.setInt(2, movid);
+            pstat.execute();
+            pstat.close();
+            resultSet.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -8,7 +8,7 @@
 
 <!-- footer-area -->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<footer>
+<footer >
     <div class="footer-top-wrap">
         <div class="container">
             <div class="footer-menu-wrap">
@@ -31,8 +31,8 @@
                     <div class="col-lg-6">
                         <div class="footer-menu">
                             <nav>
-                                <ul class="navigation" style="padding-left: 20%">
-                                    <li class="active menu-item-has-children"><a href="./index.jsp">主页</a>
+                                <ul class="navigation" style="padding-left: 20%" >
+                                    <li class="active menu-item-has-children"><a href="./index.jsp" >主页</a>
                                     </li>
                                     <li class="menu-item-has-children"><a href="searchallmovie.action">全部电影</a>
                                     </li>

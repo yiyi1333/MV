@@ -1,9 +1,8 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>>
 <%--
   Created by IntelliJ IDEA.
   User: rainbow
-  Date: 2021/10/25
-  Time: 10:10
+  Date: 2021/11/21
+  Time: 21:09
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -175,6 +174,7 @@
 
                                         <form id="form1" runat="server" action="QuestionAction.action" method="post">
                                             <div class="quemain-list clearfix">
+
                                                 <transition-group :name="transitionName">
                                                     <div class="problemList" v-show="dataIndex === index"
                                                          v-for="(item, index) in data" :key="index">
@@ -188,15 +188,16 @@
                                                                 <li v-if="item.multiSelect == 2"
                                                                     v-for="(li, liIndex) in item.quesubject.queoption"
                                                                     :key="liIndex" @click="choiceCheck(index,liIndex)">
-                                                                    <input type="checkbox" :value="li"
+                                                                    <input type="checkbox" :value="li" name="message"
                                                                            v-model="item.checkbox"/>
+
                                                                     <span>{{li}}</span>
                                                                 </li>
                                                                 <!-- 单选 -->
                                                                 <li v-if="item.multiSelect == 0"
                                                                     v-for="(li, liIndex) in item.quesubject.queoption"
                                                                     :key="liIndex" @click="choiceRadio(index,liIndex)">
-                                                                    <input type="radio" :value="li"
+                                                                    <input type="radio" :value="li" name="message"
                                                                            v-model="item.checkbox"/>
                                                                     <span>{{li}}</span>
                                                                 </li>
@@ -205,14 +206,16 @@
                                                     </div>
                                                 </transition-group>
                                             </div>
-
                                             <div class="quebtn-groups-height" style="height: 10%">
                                                 <div class="quebtn-groups clearfix">
-                                                    <span v-show="isPrev" class="quesubmit prev" @click="prev">上一题</span>
-                                                    <span v-show="isNext" class="quesubmit next" @click="next">下一题</span>
-                                                    <span v-show="isquesubmit" class="quesubmit save" @click="save"><a href="login.jsp">提交</a> </span>
-<%--                                                    <input v-show="isquesubmit" type="quesubmit"  class="quesubmit save"--%>
-<%--                                                           value="提交">--%>
+                                                    <span v-show="isPrev" class="quesubmit prev"
+                                                          @click="prev">上一题</span>
+                                                    <span v-show="isNext" class="quesubmit next"
+                                                          @click="next">下一题</span>
+<%--                                                    <span v-show="isquesubmit" class="quesubmit save" @click="save"><a--%>
+<%--                                                            href="login.jsp">提交</a> </span>--%>
+                                                    <input v-show="isquesubmit" type="submit" class="quesubmit save" @click="save"
+                                                    value="提交">
                                                 </div>
                                             </div>
                                         </form>
@@ -243,12 +246,10 @@
                     quesubject: {
                         title: '您的性别是',
                         describe: '提供性别信息可以更好的找到喜欢的电影哦~',
-                        queoption: ['男', '女', '不告诉你呢',],//选项
+                        queoption: ['11', '12', '13',],//选项
                     },
                     checkbox: [],
                     multiSelect: 0,//2为多选、0为单选、1为组合单选
-                    isSelect: false,//判断是否选中其中一个
-                    isFirst: true,//判断是否点击多选第一个按钮
                     isAddData: false,//判断是否已加载新数据
                 },
 
@@ -256,39 +257,35 @@
                     quesubject: {
                         title: '您的观影目的',
                         describe: '是为什么想看电影，想在什么时候看电影呢（多选）',
-                        queoption: ['吃饭刷剧时候看看', '无聊会去看', '是个有艺术细胞的人呢', 'emo了', '电影伴我入眠', '高深莫测的人不应该透露信息',],//选项
+                        queoption: ['21', '22', '23', '24', '25', '26',],//选项
                     },
                     checkbox: [],
                     multiSelect: 2,//是否是多选
-                    isSelect: false,//判断是否选中其中一个
-                    isFirst: true,//判断是否点击多选第一个按钮
                     isAddData: false,//判断是否已加载新数据
                 },
                 {
                     quesubject: {
                         title: '观看场景',
                         describe: '描述以下现在或者经常看电影的场景（多选）',
-                        queoption: ['想赖床的早晨', '恰饭的空隙', '懒洋洋的午后', '安静的摸鱼场所', '困困的躺在床上', '未知的氛围'],//选项
+                        queoption: ['31', '32', '33', '34', '35', '36'],//选项
                     },
                     checkbox: [],
                     multiSelect: 2,//是否是多选
-                    isSelect: false,//判断是否选中其中一个
-                    isFirst: true,//判断是否点击多选第一个按钮
+
                     isAddData: false,//判断是否已加载新数据
                 },
                 {
                     quesubject: {
                         title: '观影方向',
                         describe: '是选喜欢或者想看的电影题材呢（多选）',
-                        queoption: ['动作', '战争', '科幻', '悬疑', '喜剧', '爱情', '励志', '动画', '惊悚', '犯罪', '情色', '记录', '剧情', '想瘫瘫，给我随机叭'],//选项
+                        queoption: ['41', '42', '43', '44', '45', '46', '47', '48'],//选项
                     },
                     checkbox: [],
                     multiSelect: 2,//是否是多选
-                    isSelect: false,//判断是否选中其中一个
-                    isFirst: true,//判断是否点击多选第一个按钮
                     isAddData: false,//判断是否已加载新数据
                 },
             ],
+
             dataIndex: 0,//问题索引
             isPrev: false,//上一题是否显示
             isNext: false,//下一题是否显示
@@ -300,9 +297,7 @@
             }
         },
         methods: {
-            choicCompose(index, liIndex, liChildIndex) {//组合单选
-                this.choice(index, liIndex, 1, liChildIndex);
-            },
+
             choiceRadio(index, liIndex) {//单选操作
                 this.choice(index, liIndex, 0, null);
             },
@@ -312,79 +307,6 @@
             choice(index, liIndex, choiceStyle, liChildIndex) {
                 //console.log(liIndex)
                 setTimeout(() => {
-
-                    switch (choiceStyle) {//判断多选、单选、组合单选
-                        case 0://单选
-                            let radioTitle = this.data[index].quesubject.title;
-                            //运动情况显示是否添加数据
-                            if (radioTitle == '运动情况' && (this.data[index].checkbox == '小于1小时' || this.data[index].checkbox == '1-3小时' || this.data[index].checkbox == '4-5小时' || this.data[index].checkbox == '大于5小时')) {
-                                if (!this.data[index].isAddData) {//添加
-                                    for (let s = 0; s < this.sports.length; s++) {
-                                        this.data.splice(index + 1, 0, this.sports[s]);
-                                    }
-                                    this.data[index].isAddData = true;
-                                }
-                            } else if (radioTitle == '运动情况' && (this.data[index].checkbox == '不锻炼')) {
-                                if (this.data[index].isAddData) {//删除
-                                    this.data.splice(index + 1, this.sports.length);
-                                    this.data[index].isAddData = false;
-                                }
-                            }
-                            break;
-                        case 1://组合单选
-                            let childIndex = liIndex * 2 + liChildIndex;
-                            if (this.$refs.childItem[childIndex].className.length <= 0) {
-                                this.$refs.childItem[childIndex].className = 'on';// 选中添加类
-                            } else {
-                                this.$refs.childItem[childIndex].className = '';// 选中再取消
-                            }
-                            //判断索引-
-                            if (childIndex === 0 || childIndex === 1) {
-                                if (this.data[index].isAddData) {//删除
-                                    this.data.splice(index + 1, this.smoke.length);
-                                    this.data[index].isAddData = false;
-                                }
-                                this.$refs.childItem[childIndex].className = 'on';
-                                this.$refs.childItem[2].className = '';
-                                this.$refs.childItem[3].className = '';
-
-                            } else if (childIndex === 2 || childIndex === 3) {
-                                if (!this.data[index].isAddData) {//添加
-                                    for (let s = 0; s < this.smoke.length; s++) {
-                                        this.data.splice(index + 1, 0, this.smoke[s]);
-                                    }
-                                    this.data[index].isAddData = true;
-                                }
-                                this.$refs.childItem[childIndex].className = 'on';
-                                this.$refs.childItem[0].className = '';
-                                this.$refs.childItem[1].className = '';
-
-                            }
-                            // 获取选中结果
-                            let arr = [];
-                            for (let i = 0; i < this.$refs.childItem.length; i++) {
-                                if (this.$refs.childItem[i].className.length > 0) {
-                                    arr.push(this.$refs.childItem[i].innerText);
-                                }
-                            }
-                            this.data[index].checkbox = arr;
-                            //console.log(this.data[index].checkbox)
-                            break;
-                        case 2://多选
-                            if (liIndex == 0 && this.data[index].isFirst) {//判断多选是否选择“无”选项
-                                this.data[index].checkbox = ['无'];
-                                this.data[index].isFirst = false;
-                            } else {
-                                this.data[index].checkbox.forEach((value, i) => {
-                                    let firstIndex = this.data[index].checkbox.indexOf('无');
-                                    if (firstIndex == i) {
-                                        this.data[index].checkbox.splice(firstIndex, 1);//删除多选第一个
-                                    }
-                                })
-                                this.data[index].isFirst = true;
-                            }
-                            break;
-                    }
 
                     if (this.data[index].checkbox.length > 0) {
                         this.isNext = true;
@@ -397,7 +319,6 @@
                     if (this.dataIndex === (this.data.length - 1)) {//判断是否是最后一题，并隐藏下一题按钮
                         this.isNext = false;
                     }
-                    //    console.log(this.data[index].checkbox)
                 })
 
             },
@@ -432,7 +353,18 @@
                     alert(this.data[this.dataIndex].quesubject.describe + '必选');
                 }
             },
+
+            // questiondata: function() {
+            //     axios.get("http://localhost:8080/MV_war_exploded/index.jsp" + this.truedata)
+            //         .then(value => {
+            //             //this指的是当前vue对象，给vue中
+            //             this.数据 = value.data.data;
+            //         })
+            // }
+        },
+
+        mounted() {
+            this.questiondata();
         }
     });
 </script>
-

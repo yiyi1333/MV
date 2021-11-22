@@ -5,6 +5,17 @@ public class User {
     private String username;
     private String password;
     private String repassword;
+//    public String[][] usermessage;
+//
+//
+//    public String[][] getUsermessage() {
+//        return usermessage;
+//    }
+//
+//    public void setUsermessage(String[][] usermessage) {
+//        this.usermessage = usermessage;
+//    }
+
     public User() {
     }
 
