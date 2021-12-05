@@ -9,23 +9,7 @@
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
         </webroots>
-      </configuration>
-      <facet type="Struts2" name="Struts 2">
-        <configuration>
-          <fileset id="s2fileset" name="Default File Set" removed="false">
-            <file>file://$MODULE_DIR$/src/struts.xml</file>
-            <file>jar://$MODULE_DIR$/web/WEB-INF/lib/struts2-core-2.3.37.jar!/struts-default.xml</file>
-          </fileset>
-          <propertiesKeys disabled="false" />
-        </configuration>
-      </facet>
-    </facet>
-    <facet type="hibernate" name="Hibernate">
-      <configuration>
-        <datasource-map>
-          <unit-entry name="HibernateSessionFactory" />
-        </datasource-map>
-        <naming-strategy-map />
+        <sourceRoots />
       </configuration>
     </facet>
   </component>

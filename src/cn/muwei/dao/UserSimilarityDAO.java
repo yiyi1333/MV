@@ -41,13 +41,17 @@ public class UserSimilarityDAO extends BaseDAO {
         userDAO.close();
 
         for (int i = 1; i <= usercnt; i++) {
-            if (i == id) continue;
+            if (i == id) {
+                continue;
+            }
             ArrayList<RateInfo> otherUserRate = rateInfoDAO.getRateList(i);
 
             int pos = 0, same = 0;
 //            double fenzi = 0, mo1 = 0, mo2 = 0;
             for (RateInfo rateInfo : otherUserRate) {
-                while (pos < rateArrayList.size() && rateArrayList.get(pos).getMov_num() < rateInfo.getMov_num()) pos++;
+                while (pos < rateArrayList.size() && rateArrayList.get(pos).getMov_num() < rateInfo.getMov_num()) {
+                    pos++;
+                }
                 if (pos < rateArrayList.size() && rateArrayList.get(pos).getMov_num() == rateInfo.getMov_num()) {
                     same++;
 //                    fenzi += rateArrayList.get(pos).score * rateInfo.score;
@@ -55,7 +59,7 @@ public class UserSimilarityDAO extends BaseDAO {
 //                    mo2 += rateInfo.score * rateInfo.score;
                 }
             }
-            if (same > 5) {
+            if (same > 0) {
 //                mo1 = Math.sqrt(mo1);
 //                mo2 = Math.sqrt(mo2);
                 UserSimilarity userSimilarity = new UserSimilarity();
@@ -64,13 +68,18 @@ public class UserSimilarityDAO extends BaseDAO {
                 userSimilarity.setCnt(rateArrayList.size() + otherUserRate.size() - same);
                 userSimilarity.setSame(same);
 //                commonUser.commonRate = Math.pow(fenzi / mo1 / mo2, 8);
-                userSimilarity.setSimilarRate((double) same / (double) userSimilarity.getCnt());
+                userSimilarity.setSimilarRate((double) same * same / (double) userSimilarity.getCnt());
                 ans.add(userSimilarity);
             }
         }
         rateInfoDAO.close();
         ans.sort(Comparator.comparingDouble(userSimilarity -> -userSimilarity.getSimilarRate()));
-        while (ans.size() > 20) ans.remove(ans.size() - 1);
+        while (ans.size() > 50) {
+            ans.remove(ans.size() - 1);
+        }
+        for (UserSimilarity userSimilarity : ans) {
+            System.out.println("id:" + userSimilarity.getId2() + "  same:" + userSimilarity.getSame() + "  rate:" + userSimilarity.getSimilarRate());
+        }
         return ans;
     }
 
@@ -92,10 +101,13 @@ public class UserSimilarityDAO extends BaseDAO {
         }
 
         movNum_movRates.sort(Comparator.comparingDouble(movNum_movRate -> -movNum_movRate.getMovRate()));
-        while (movNum_movRates.size() > movieNumber) movNum_movRates.remove(movNum_movRates.size() - 1);
+        while (movNum_movRates.size() > movieNumber) {
+            movNum_movRates.remove(movNum_movRates.size() - 1);
+        }
 
         ArrayList<Movie> movies = new ArrayList<>();
         for (MovNum_MovRate movNum_movRate : movNum_movRates) {
+            System.out.println("推荐电影:" + movieDAO.getMovieByNum(movNum_movRate.getMovNum()).getName() + "  得分:" + movNum_movRate.getMovRate());
             movies.add(movieDAO.getMovieByNum(movNum_movRate.getMovNum()));
         }
         movieDAO.close();
