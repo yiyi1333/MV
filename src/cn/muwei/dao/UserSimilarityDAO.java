@@ -41,13 +41,17 @@ public class UserSimilarityDAO extends BaseDAO {
         userDAO.close();
 
         for (int i = 1; i <= usercnt; i++) {
-            if (i == id) continue;
+            if (i == id) {
+                continue;
+            }
             ArrayList<RateInfo> otherUserRate = rateInfoDAO.getRateList(i);
 
             int pos = 0, same = 0;
 //            double fenzi = 0, mo1 = 0, mo2 = 0;
             for (RateInfo rateInfo : otherUserRate) {
-                while (pos < rateArrayList.size() && rateArrayList.get(pos).getMov_num() < rateInfo.getMov_num()) pos++;
+                while (pos < rateArrayList.size() && rateArrayList.get(pos).getMov_num() < rateInfo.getMov_num()) {
+                    pos++;
+                }
                 if (pos < rateArrayList.size() && rateArrayList.get(pos).getMov_num() == rateInfo.getMov_num()) {
                     same++;
 //                    fenzi += rateArrayList.get(pos).score * rateInfo.score;
@@ -70,7 +74,9 @@ public class UserSimilarityDAO extends BaseDAO {
         }
         rateInfoDAO.close();
         ans.sort(Comparator.comparingDouble(userSimilarity -> -userSimilarity.getSimilarRate()));
-        while (ans.size() > 50) ans.remove(ans.size() - 1);
+        while (ans.size() > 50) {
+            ans.remove(ans.size() - 1);
+        }
         for (UserSimilarity userSimilarity : ans) {
             System.out.println("id:" + userSimilarity.getId2() + "  same:" + userSimilarity.getSame() + "  rate:" + userSimilarity.getSimilarRate());
         }
@@ -95,7 +101,9 @@ public class UserSimilarityDAO extends BaseDAO {
         }
 
         movNum_movRates.sort(Comparator.comparingDouble(movNum_movRate -> -movNum_movRate.getMovRate()));
-        while (movNum_movRates.size() > movieNumber) movNum_movRates.remove(movNum_movRates.size() - 1);
+        while (movNum_movRates.size() > movieNumber) {
+            movNum_movRates.remove(movNum_movRates.size() - 1);
+        }
 
         ArrayList<Movie> movies = new ArrayList<>();
         for (MovNum_MovRate movNum_movRate : movNum_movRates) {

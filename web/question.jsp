@@ -12,6 +12,9 @@
 <link rel="stylesheet" href="css_lib/css/reset.css">
 <link rel="stylesheet" href="css_lib/css/style.css">
 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
 <jsp:include page="public/header.jsp"/>
 <style>
     .quecontent {
@@ -212,10 +215,11 @@
                                                           @click="prev">上一题</span>
                                                     <span v-show="isNext" class="quesubmit next"
                                                           @click="next">下一题</span>
-<%--                                                    <span v-show="isquesubmit" class="quesubmit save" @click="save"><a--%>
-<%--                                                            href="login.jsp">提交</a> </span>--%>
-                                                    <input v-show="isquesubmit" type="submit" class="quesubmit save" @click="save"
-                                                    value="提交">
+                                                    <%--                                                    <span v-show="isquesubmit" class="quesubmit save" @click="save"><a--%>
+                                                    <%--                                                            href="login.jsp">提交</a> </span>--%>
+                                                    <input v-show="isquesubmit" type="submit" class="quesubmit save"
+                                                           @click="save"
+                                                           value="提交">
                                                 </div>
                                             </div>
                                         </form>
@@ -235,8 +239,10 @@
 
 <jsp:include page="public/footer.jsp"/>
 </body>
+
 </html>
-<script>
+
+<script  charset="UTF-8" >
     new Vue({
         el: '#app',
         data: {
@@ -246,7 +252,7 @@
                     quesubject: {
                         title: '您的性别是',
                         describe: '提供性别信息可以更好的找到喜欢的电影哦~',
-                        queoption: ['11', '12', '13',],//选项
+                        queoption: ['男', '女', '其他',],//选项
                     },
                     checkbox: [],
                     multiSelect: 0,//2为多选、0为单选、1为组合单选
@@ -255,9 +261,9 @@
 
                 {
                     quesubject: {
-                        title: '您的观影目的',
-                        describe: '是为什么想看电影，想在什么时候看电影呢（多选）',
-                        queoption: ['21', '22', '23', '24', '25', '26',],//选项
+                        title: '您感兴趣的电影类型是',
+                        describe: '提供感兴趣的电影类型可以增加推荐喜欢的电影的概率（多选）',
+                        queoption: ['1.动画', '2.剧情', '3.惊悚', '4.恐怖', '5.冒险', '6.科幻', '7.爱情', '8.动作', '9.犯罪', '10.悬疑', '11.喜剧', '12.纪录片', '13.传记', '14.古装'],//选项
                     },
                     checkbox: [],
                     multiSelect: 2,//是否是多选
@@ -265,20 +271,19 @@
                 },
                 {
                     quesubject: {
-                        title: '观看场景',
-                        describe: '描述以下现在或者经常看电影的场景（多选）',
-                        queoption: ['31', '32', '33', '34', '35', '36'],//选项
+                        title: '您喜欢的演员有',
+                        describe: '选择你喜欢的演员（多选）',
+                        queoption: ['曾志伟', '刘德华', '黄秋生', '吴镇宇', '林雪', '任达华', '吴君如', '梁家辉'],//选项
                     },
                     checkbox: [],
                     multiSelect: 2,//是否是多选
-
                     isAddData: false,//判断是否已加载新数据
                 },
                 {
                     quesubject: {
-                        title: '观影方向',
-                        describe: '是选喜欢或者想看的电影题材呢（多选）',
-                        queoption: ['41', '42', '43', '44', '45', '46', '47', '48'],//选项
+                        title: '您喜欢的导演有',
+                        describe: '选择你喜欢的导演（多选）',
+                        queoption: ['王晶', '山田洋次', '杜琪峰', '张彻', '堤幸彦', '伍迪·艾伦', '邱礼涛', '英格玛·伯格曼'],//选项
                     },
                     checkbox: [],
                     multiSelect: 2,//是否是多选

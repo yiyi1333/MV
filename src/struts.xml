@@ -67,7 +67,7 @@
             <result name="success">/Collection.jsp</result>
         </action>
         <action name="QuestionAction" class="cn.muwei.action.LoginRegisterAction" method="QuestionAction">
-            <result name="success">/index.jsp</result>
+            <result name="success" type="redirectAction">indexrecommend</result>
         </action>
     </package>
 </struts>

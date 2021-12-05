@@ -2,7 +2,6 @@
   <artifact type="exploded-war" name="MV:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/MV_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="MV/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="MV" />
@@ -32,6 +31,7 @@
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/jaxb-api-2.3.0.jar" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="MV/web/Web" />
     </root>
   </artifact>
 </component>

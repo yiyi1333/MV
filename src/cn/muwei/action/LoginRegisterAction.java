@@ -1,5 +1,6 @@
 package cn.muwei.action;
 
+import cn.muwei.dao.UserDAO;
 import cn.muwei.entity.User;
 import cn.muwei.service.LoginRegisterService;
 import com.opensymphony.xwork2.ActionContext;
@@ -12,7 +13,11 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+
+import static java.lang.Character.isDigit;
 
 public class LoginRegisterAction extends ActionSupport implements ServletContextAware, ServletRequestAware, ServletResponseAware {
     private User loginUser;
@@ -93,6 +98,10 @@ public class LoginRegisterAction extends ActionSupport implements ServletContext
             return "fail";
         }
         if (service.register(loginUser)) {
+            int userid = service.login(loginUser);
+            loginUser.setId(userid);
+            HttpSession session = request.getSession();
+            session.setAttribute("User", loginUser);
             return "success";
         } else {
             return "fail";
@@ -109,11 +118,35 @@ public class LoginRegisterAction extends ActionSupport implements ServletContext
     }
 
     public String QuestionAction() {
+        List<String> list = new ArrayList<>();
         for (String str : message) {
-            System.out.println(str);
+            if (isDigit(str.charAt(0))) {
+                int val = str.charAt(0) - '0';
+                if (isDigit(str.charAt(1))) val = val * 10 + str.charAt(1) - '0';
+                switch (val) {
+                    case 1 -> list.add("动画");
+                    case 2 -> list.add("剧情");
+                    case 3 -> list.add("惊悚");
+                    case 4 -> list.add("恐怖");
+                    case 5 -> list.add("冒险");
+                    case 6 -> list.add("科幻");
+                    case 7 -> list.add("爱情");
+                    case 8 -> list.add("动作");
+                    case 9 -> list.add("犯罪");
+                    case 10 -> list.add("悬疑");
+                    case 11 -> list.add("喜剧");
+                    case 12 -> list.add("纪录片");
+                    case 13 -> list.add("传记");
+                    case 14 -> list.add("古装");
+                }
+            }
         }
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("User");
+        UserDAO userDAO = new UserDAO();
+        userDAO.addTags(list, user.getId());
+        userDAO.close();
         return "success";
-
     }
 
 }

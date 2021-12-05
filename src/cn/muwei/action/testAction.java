@@ -81,8 +81,12 @@ public class testAction implements ServletRequestAware {
         userSimilarities = userSimilarityDAO.getCommonUser(user.getId());
         if (userSimilarities.size() < 20) {
             System.out.println("少于20个");
+            UserDAO userDAO = new UserDAO();
+            movies = userDAO.getTagRecommend(user.getId());
+            userDAO.close();
+        } else {
+            movies = userSimilarityDAO.getRecommend(userSimilarities, 40);
         }
-        movies = userSimilarityDAO.getRecommend(userSimilarities, 40);
         userSimilarityDAO.close();
         return "success";
     }
@@ -97,12 +101,12 @@ public class testAction implements ServletRequestAware {
         return "getWordCloud";
     }
 
-    public String index(){
+    public String index() {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("User");
         UserSimilarityDAO userSimilarityDAO = new UserSimilarityDAO();
         userSimilarities = userSimilarityDAO.getCommonUser(user.getId());
-        if(userSimilarities.size() < 20){
+        if (userSimilarities.size() < 20) {
             System.out.println("少于20个");
         }
         movies = userSimilarityDAO.getRecommend(userSimilarities, 5);
