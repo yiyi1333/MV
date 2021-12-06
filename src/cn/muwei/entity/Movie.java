@@ -128,4 +128,22 @@ public class Movie {
     public void setLength(String length) {
         this.length = length;
     }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "movid='" + movid + '\'' +
+                ", name='" + name + '\'' +
+                ", director='" + director + '\'' +
+                ", actor='" + actor + '\'' +
+                ", genre='" + genre + '\'' +
+                ", tag='" + tag + '\'' +
+                ", summary='" + summary + '\'' +
+                ", rate='" + rate + '\'' +
+                ", popular='" + popular + '\'' +
+                ", posterUrl='" + posterUrl + '\'' +
+                ", releasetime='" + releasetime + '\'' +
+                ", length='" + length + '\'' +
+                '}';
+    }
 }

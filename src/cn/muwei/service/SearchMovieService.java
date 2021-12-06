@@ -60,4 +60,11 @@ public class SearchMovieService {
         dao.close();
         return list;
     }
+
+    public List searchSimilarMovie(String movieId){
+        MovieDAO dao = new MovieDAO();
+        List list = dao.searchSimilarMovie(movieId);
+        dao.close();
+        return list;
+    }
 }

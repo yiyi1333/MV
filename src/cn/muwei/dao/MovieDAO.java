@@ -246,4 +246,37 @@ public class MovieDAO extends BaseDAO {
         }
         return list;
     }
+
+    public List searchSimilarMovie(String movieid){
+        String sql ="select *\n" +
+                "from movieinfo\n" +
+                "where movieID in(\n" +
+                "    select mov_id\n" +
+                "    from movid\n" +
+                "    where mov_num in(\n" +
+                "        select movid.mov_num\n" +
+                "        from moviesimilar, movid\n" +
+                "        where movie2_id = movid.mov_num and movie1_id =(\n" +
+                "                select mov_num\n" +
+                "                from movid\n" +
+                "                where mov_id = ?\n" +
+                "        )\n" +
+                "    )\n" +
+                ")";
+        List list = new ArrayList<Movie>();
+        try {
+            PreparedStatement pstat = conn.prepareStatement(sql);
+            pstat.setString(1, movieid);
+            ResultSet rst = pstat.executeQuery();
+            while (rst.next()) {
+                Movie temp = new Movie(rst.getString(1), rst.getString(2), rst.getString(4), rst.getString(3), rst.getString(5), rst.getString(6), rst.getString(7),
+                        rst.getString(8), rst.getString(9), rst.getString(10), rst.getString(11), rst.getString(12));
+                list.add(temp);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return list;
+    }
 }

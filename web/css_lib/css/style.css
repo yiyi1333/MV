@@ -5644,3 +5644,17 @@ label {
 .mintui-field-success:before {
     content: "\E609";
 }
+
+.movie-line{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie{
+    width: 20%;
+    height: auto;
+}
+.movie img{
+    height: 380px;
+    width: auto;
+}
