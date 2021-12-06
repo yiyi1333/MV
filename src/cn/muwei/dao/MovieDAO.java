@@ -248,9 +248,21 @@ public class MovieDAO extends BaseDAO {
     }
 
     public List searchSimilarMovie(String movieid){
-        String sql ="select movieinfo.*\n" +
-                "from moviesimilar, movieinfo\n" +
-                "where moviesimilar.movie1_id = ? and movie2_id = movieinfo.movieID";
+        String sql ="select *\n" +
+                "from movieinfo\n" +
+                "where movieID in(\n" +
+                "    select mov_id\n" +
+                "    from movid\n" +
+                "    where mov_num in(\n" +
+                "        select movid.mov_num\n" +
+                "        from moviesimilar, movid\n" +
+                "        where movie2_id = movid.mov_num and movie1_id =(\n" +
+                "                select mov_num\n" +
+                "                from movid\n" +
+                "                where mov_id = ?\n" +
+                "        )\n" +
+                "    )\n" +
+                ")";
         List list = new ArrayList<Movie>();
         try {
             PreparedStatement pstat = conn.prepareStatement(sql);
