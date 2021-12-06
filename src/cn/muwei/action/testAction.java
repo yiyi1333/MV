@@ -9,8 +9,10 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.TreeMap;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
 
 public class testAction implements ServletRequestAware {
     ArrayList<Movie> movies;
@@ -91,12 +93,14 @@ public class testAction implements ServletRequestAware {
         return "success";
     }
 
-    public String getWordCloud() {
+    public String getWordCloud() throws IOException {
         UserDAO userDAO = new UserDAO();
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("User");
         genre = userDAO.getGenreMap(user.getId(), 1000000);
         actor = userDAO.getActorMap(user.getId(), 1000000);
+        session.setAttribute("genre",genre);
+        session.setAttribute("actor",actor);
         userDAO.close();
         return "getWordCloud";
     }
