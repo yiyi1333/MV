@@ -81,12 +81,6 @@
                                 <div class="movie-poster">
                                     <img src="<s:property value="posterUrl"/> " alt="显示异常">
                                     <ul class="overlay-btn">
-                                            <%--                                    <li class="rating">--%>
-                                            <%--                                        <i class="fas fa-star"></i>--%>
-                                            <%--                                        <i class="fas fa-star"></i>--%>
-                                            <%--                                        <i class="fas fa-star"></i>--%>
-                                            <%--                                        <i class="fas fa-star-half"></i>--%>
-                                            <%--                                    </li>--%>
                                         <li><a href="#" class="popup-video btn">加入喜欢</a></li>
                                         <li><a href="detail.action?movid=<s:property value="movid"/>" class="btn">详情</a></li>
                                     </ul>
@@ -117,12 +111,6 @@
                                 <div class="movie-poster">
                                     <img src="<s:property value="posterUrl"/> " alt="显示异常">
                                     <ul class="overlay-btn">
-                                            <%--                                    <li class="rating">--%>
-                                            <%--                                        <i class="fas fa-star"></i>--%>
-                                            <%--                                        <i class="fas fa-star"></i>--%>
-                                            <%--                                        <i class="fas fa-star"></i>--%>
-                                            <%--                                        <i class="fas fa-star-half"></i>--%>
-                                            <%--                                    </li>--%>
                                         <li><a href="#" class="popup-video btn">加入喜欢</a></li>
                                         <li><a href="detail.action?movid=<s:property value="movid"/>" class="btn">详情</a></li>
                                     </ul>

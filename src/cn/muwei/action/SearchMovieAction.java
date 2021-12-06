@@ -100,6 +100,8 @@ public class SearchMovieAction extends ActionSupport implements ServletContextAw
         int movnum = movieDAO.getNumById(movie.getMovid());
         userDAO.addRateInfo(user.getId(), movnum);
         request.setAttribute("movie", movie);
+        List similarmovie = service.searchSimilarMovie(movid);
+        request.setAttribute("similarmovie", movnum);
         System.out.println(movie.getSummary());
         userDAO.close();
         movieDAO.close();
@@ -115,4 +117,5 @@ public class SearchMovieAction extends ActionSupport implements ServletContextAw
         }
         return SUCCESS;
     }
+
 }
